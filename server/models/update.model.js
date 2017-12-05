@@ -2,14 +2,14 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const updateSchema = new Schema({
-    template: [{ 
-        type: Schema.Types.ObjectId, 
-        ref: 'Template', 
+    template: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Template',
         required: true
     }],
-    user: [{ 
-        type: Schema.Types.ObjectId, 
-        ref: 'User', 
+    user: [{
+        type: Schema.Types.ObjectId,
+        ref: 'User',
         required: true
     }],
 }, {
