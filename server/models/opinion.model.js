@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const User = require('./models/user.model');
+const User = require('./user.model');
 
 const opinionSchema = new Schema({
-    from: [{ type: Schema.Types.ObjectId, ref: 'User', required: true }],
-    to: [{ type: Schema.Types.ObjectId, ref: 'User', required: true }],
+    from: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+    to: { type: Schema.Types.ObjectId, ref: 'User', required: true },
     text: String
 }, {
   timestamps: {

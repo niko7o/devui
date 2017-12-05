@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const Opinion = require('./models/opinion.model');
-const Message = require('./models/message.model');
+const Opinion = require('./opinion.model');
+const Message = require('./message.model');
 
 const userSchema = new Schema({
   username: { type: String, required: [true, 'Please specify a username'] },

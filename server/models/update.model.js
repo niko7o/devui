@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const User = require('./models/user.model');
-const Template = require('./models/template.model');
+const User = require('./user.model');
+const Template = require('./template.model');
 
 const updateSchema = new Schema({
     template: [{
