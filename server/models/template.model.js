@@ -8,7 +8,8 @@ const templateSchema = new Schema({
   developers: [],
   updates: [],
   favorites: Number,
-  votes: Number
+  votes: Number,
+  creator: { type: Schema.Types.ObjectId, ref: 'User', default: 'Sonlospadres'}
 }, {
   timestamps: {
     createdAt: 'created_at',

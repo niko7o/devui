@@ -16,14 +16,13 @@ const simpleCRUD = (Model) => {
   const model_properties = _.remove(Object.keys(Model.schema.paths), k=> !['_id','__v','created_at','updated_at'].includes(k));
   console.log(model_properties);
   const router = express.Router();
-  
+
   /* List all elements from #{model} */
   router.get('/', (req, res, next) => {
     Model.find()
       .then(list => res.json(list))
-      .catch(e => res.json(e));
+      .catch(error => res.json(error));
   });
-
 
   /* Create a new #{model} */
   router.post('/', (req, res, next) => {

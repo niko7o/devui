@@ -7,6 +7,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
+const template = require('./routes/template');
 const auth = require('./routes/auth');
 const api = require('./routes/api');
 
@@ -50,9 +51,10 @@ app.use(session({
 
 require('./passport')(app);
 
+app.use('/api/template', template)
 app.use('/api/auth', auth);
 app.use('/api/users', api(require('./models/user.model')));
-app.use('/api/templates', api(require('./models/template.model'))); // to be finished
+app.use('/api/templates', api(require('./models/template.model')));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
