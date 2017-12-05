@@ -12,11 +12,12 @@ const updateSchema = new Schema({
         ref: 'User',
         required: true
     }],
-}, {
-  timestamps: {
-    createdAt: 'created_at',
-    updatedAt: 'updated_at'
-  }
+    message: String
+},{
+    timestamps: {
+        createdAt: 'created_at',
+        updatedAt: 'updated_at'
+    }
 });
 
 const Update = mongoose.model('Update', updateSchema);
