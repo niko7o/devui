@@ -13,9 +13,9 @@ const checkIDParam = (req, res, next) => {
 
 const simpleCRUD = (Model) => {
 
-  const model_properties = _.remove(Object.keys(Model.schema.paths), k=> !['_id','__v','created_at','updated_at'].includes(k));
-  console.log(model_properties);
+  const model_properties = _.remove(Object.keys(Model.schema.paths), key => !['_id','__v','created','updated'].includes(key));
   const router = express.Router();
+  // console.log(model_properties);
 
   /* List all elements from #{model} */
   router.get('/', (req, res, next) => {
