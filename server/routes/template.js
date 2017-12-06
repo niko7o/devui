@@ -1,9 +1,7 @@
 const express = require('express');
 const passport = require('passport');
-
 const User = require('../models/user.model');
 const Template = require('../models/template.model');
-
 const templateRoutes = express.Router();
 
 templateRoutes.post('/new', (req, res, next) => {

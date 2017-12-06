@@ -13,8 +13,8 @@ const userSchema = new Schema({
   inbox: [{ type: Schema.Types.ObjectId, ref: 'Message' }]
 }, {
   timestamps: {
-    createdAt: 'created_at',
-    updatedAt: 'updated_at'
+    createdAt: 'created',
+    updatedAt: 'updated'
   }
 });
 

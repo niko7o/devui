@@ -10,10 +10,11 @@ const templateSchema = new Schema({
   favorites: Number,
   votes: Number,
   creator: { type: Schema.Types.ObjectId, ref: 'User', default: 'Sonlospadres'}
-}, {
+}, 
+{
   timestamps: {
-    createdAt: 'created_at',
-    updatedAt: 'updated_at'
+    createdAt: 'created',
+    updatedAt: 'updated'
   }
 });
 
