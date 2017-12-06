@@ -57,7 +57,7 @@ app.use(session({
 require('./passport')(app);
 
 app.use('/', index)
-app.use('/api/template', template)
+app.use('/template', template)
 app.use('/api/auth', auth);
 app.use('/api/users', api(require('./models/user.model')));
 app.use('/api/templates', api(require('./models/template.model')));
