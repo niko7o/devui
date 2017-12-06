@@ -6,10 +6,10 @@ const Message = require('./message.model');
 const userSchema = new Schema({
   username: { type: String, required: [true, 'Please specify a username'] },
   password: { type: String, required: [true, 'A password is needed'] },
-  email: String,
+  email: { type: String, lowercase: true },
   role: String,
   opinions: [{ type: Schema.Types.ObjectId, ref: 'Opinion' }],
-  favorites: Number,
+  favorites: { type : Number, default: 0},
   inbox: [{ type: Schema.Types.ObjectId, ref: 'Message' }]
 }, {
   timestamps: {
