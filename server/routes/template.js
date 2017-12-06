@@ -23,6 +23,21 @@ templateRoutes.post("/:id/rateup", (req, res, next) => {
   })
 });
 
+templateRoutes.post("/:id/ratedown", (req, res, next) => {
+  
+  let templateID = req.params.id;
+  console.log('template id: ' + req.params.id);
+  
+  Template.findByIdAndUpdate(templateID, { $inc: {"votes": -1}}, { new: true }) //params: filter, update, options
+  .then(editedTemplate => {
+      if (!editedTemplate) {
+        console.log(editedTemplate.votes);
+        res.status(400).json({ message: 'This template does not exist, impossible to rate up!'});
+      } else {
+        res.status(200).json(`Vote count incremented to: ${ editedTemplate.votes }`);
+      }
+  })
+});
 
 templateRoutes.post("/:id/addfavorite", (req, res, next) => {
   // User relation with Template, push the template id to user array
