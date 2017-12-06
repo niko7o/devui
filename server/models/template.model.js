@@ -2,13 +2,13 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const templateSchema = new Schema({
-  title: String,
-  description: String,
+  title: { type : String , unique : true, required : true },
+  description: { type : String , unique : true, required : true },
   images: [],
   developers: [],
   updates: [],
-  favorites: Number,
-  votes: Number,
+  favorites: { type : Number, default: 0},
+  votes: { type : Number, default: 0},
   creator: { type: Schema.Types.ObjectId, ref: 'User', default: 'Sonlospadres'}
 }, 
 {

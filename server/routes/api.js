@@ -24,8 +24,8 @@ const simpleCRUD = (Model) => {
       .catch(error => res.json(error));
   });
 
-  /* Create a new #{model} */
-  router.post('/', (req, res, next) => {
+  /* CREATE a new #{model} */
+  router.post('/new', (req, res, next) => {
 
     const obj_data = _.pick(req.body, model_properties);
     const obj = new Model(obj_data);
@@ -35,14 +35,14 @@ const simpleCRUD = (Model) => {
       .catch(e => res.json(e));
   });
 
-  /* GET a single Model. */
+  /* READ a single Model. */
   router.get('/:id', checkIDParam, (req, res) => {
     Model.findById(req.params.id)
       .then(o => res.json(o))
       .catch(e => res.json(e));
   });
 
-  /* EDIT a Model. */
+  /* UPDATE a Model. */
   router.put('/:id', checkIDParam, (req, res) => {
     const updates = _.pick(req.body, model_properties);
     Model.findByIdAndUpdate(req.params.id, {

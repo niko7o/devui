@@ -5,13 +5,14 @@ const Template = require('../models/template.model');
 const templateRoutes = express.Router();
 
 templateRoutes.post('/new', (req, res, next) => {
-  const { 
-    title, 
+  const {
+    title,
     description,
     images,
     developers,
     updates,
-    creator
+    creator,
+    votes
   } = req.body;
 
   if (!title || !description) {
@@ -31,7 +32,8 @@ templateRoutes.post('/new', (req, res, next) => {
       images,
       developers,
       updates,
-      creator
+      creator,
+      votes
     });
     return theTemplate.save();
   })
@@ -50,6 +52,10 @@ templateRoutes.post('/new', (req, res, next) => {
       console.log(e)
       res.status(500).json({ message: 'Something went wrong' });
   });
+});
+
+templateRoutes.post('/:id/addvote', (req, res, next) => {
+
 });
 
 module.exports = templateRoutes;
