@@ -24,7 +24,6 @@ authRoutes.post('/signup', (req, res, next) => {
       res.status(400).json({ message: 'The username already exists' });
       return;
     }
-    console.log(user);
     const salt = bcrypt.genSaltSync(10);
     const hashPass = bcrypt.hashSync(password, salt);
     const theUser = new User({
@@ -34,7 +33,7 @@ authRoutes.post('/signup', (req, res, next) => {
     return theUser.save();
   })
   .then(newUser => {
-    console.log(`registering user:${newUser}`);
+    console.log(`registering user: ${newUser}`);
     req.login(newUser, (err) => {
       if (err) {
         console.log(err);

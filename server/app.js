@@ -10,6 +10,7 @@ const mongoose = require('mongoose');
 const template = require('./routes/template');
 const auth = require('./routes/auth');
 const api = require('./routes/api');
+const index = require('./routes/index');
 
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
@@ -34,6 +35,10 @@ var corsOptions = {
 
 app.use(cors(corsOptions));
 
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -51,6 +56,7 @@ app.use(session({
 
 require('./passport')(app);
 
+app.use('/', index)
 app.use('/api/template', template)
 app.use('/api/auth', auth);
 app.use('/api/users', api(require('./models/user.model')));
