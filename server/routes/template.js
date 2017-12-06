@@ -24,7 +24,7 @@ templateRoutes.post("/:id/rateup", (req, res, next) => {
 });
 
 templateRoutes.post("/:id/ratedown", (req, res, next) => {
-  
+
   let templateID = req.params.id;
   console.log('template id: ' + req.params.id);
   
@@ -32,7 +32,7 @@ templateRoutes.post("/:id/ratedown", (req, res, next) => {
   .then(editedTemplate => {
       if (!editedTemplate) {
         console.log(editedTemplate.votes);
-        res.status(400).json({ message: 'This template does not exist, impossible to rate up!'});
+        res.status(400).json({ message: 'This template does not exist, impossible to rate down!'});
       } else {
         res.status(200).json(`Vote count incremented to: ${ editedTemplate.votes }`);
       }
@@ -41,6 +41,18 @@ templateRoutes.post("/:id/ratedown", (req, res, next) => {
 
 templateRoutes.post("/:id/addfavorite", (req, res, next) => {
   // User relation with Template, push the template id to user array
+  let templateID = req.params.id;
+  console.log('template id: ' + req.params.id);
+  
+  Template.findByIdAndUpdate(templateID, { "$push": { "favorites": req.user._id } }, { new: true })
+    .then(editedTemplate => {
+      if (!editedTemplate) {
+        console.log(editedTemplate.favorites);
+        res.status(400).json({ message: 'Impossible to favorite! Template does not exist'});
+      } else {
+        res.status(200).json(`Favorite count incremented to: ${ editedTemplate.votes }`);
+      }
+  })
 });
 
 module.exports = templateRoutes;

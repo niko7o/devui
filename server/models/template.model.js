@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const Update = require('./update.model');
 const Message = require('./message.model');
+const User = require('./user.model');
 
 const templateSchema = new Schema({
   title: { 
@@ -13,7 +14,7 @@ const templateSchema = new Schema({
   images: [{ type: String}],
   developers: [{ type: Schema.Types.ObjectId, ref: 'User' }],
   updates: [{ type: Schema.Types.ObjectId, ref: 'Update' }],
-  favorites: { type : Number, default: 0},
+  favorites: [{ type: Schema.Types.ObjectId, ref: 'User' }], // remove maybe
   votes: { type : Number, default: 0},
   creator: { type: Schema.Types.ObjectId, ref: 'User'}
 }, 
