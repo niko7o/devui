@@ -11,7 +11,7 @@ const templateRoutes = express.Router();
 templateRoutes.post("/:id/rateup", (req, res, next) => {
   let templateID = req.params.id;
   let hasVoted = false;
-  let userID = req.user._id; // UNDER TESTING, but should be user.locals
+  let userID = req.user._id;
   
   Template.findByIdAndUpdate(templateID, { $inc: {"votes": 1}}, { new: true }) //params: filter, update, options
   .then(editedTemplate => {
@@ -40,14 +40,11 @@ templateRoutes.post("/:id/ratedown", (req, res, next) => {
 });
 
 /* Add template update */
-templateRoutes.post("/:id/:msg/addupdate/", (req, res, next) => {
+templateRoutes.post("/:id/addupdate/", (req, res, next) => {
 
   let templateID = req.params.id;
-  let userID = req.user._id; // UNDER TESTING, but should be user.locals
-  let msg = req.params.msg;
-
-  console.log('template id: ' + req.params.id);
-  console.log('user id' + userID)
+  let userID = req.user._id;
+  let msg = `estoy probando las updates`; // change this to req.body when using angular
   
   User.findByIdAndUpdate(templateID, { "$push": { "updates": msg } }, { new: true })
     .populate('updates')
@@ -63,8 +60,9 @@ templateRoutes.post("/:id/:msg/addupdate/", (req, res, next) => {
 
 /* Add template to user's favorites */
 templateRoutes.post("/:id/addfavorite", (req, res, next) => {
+
   let templateID = req.params.id;
-  let userID = req.user._id; // UNDER TESTING, but should be user.locals
+  let userID = req.user._id;
   let hasFavorited = false;
   
   User.findByIdAndUpdate(userID, { "$push": { "favorites": templateID } }, { new: true })
