@@ -7,9 +7,10 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-const template = require('./routes/template');
-const auth = require('./routes/auth');
 const api = require('./routes/api');
+const template = require('./routes/template');
+const user = require('./routes/user');
+const auth = require('./routes/auth');
 const index = require('./routes/index');
 
 const session = require('express-session');
@@ -18,7 +19,7 @@ const cors = require('cors');
 const app = express();
 
 mongoose.connect(process.env.DBURL).then(() =>{
-  console.log(`Connected to DB: ${process.env.DBURL}`);
+  console.log(`Devui connected to db: ${process.env.DBURL}`);
 });
 
 var whitelist = [
@@ -39,14 +40,11 @@ app.use(cors(corsOptions));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-// uncomment after placing your favicon in /public
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.use(session({
   secret: 'ui rocks',
   resave: false,
@@ -61,9 +59,13 @@ app.use((req,res,next) => {
   next();
 });
 
+// Customs
 app.use('/', index)
 app.use('/template', template)
+app.use('/user', user)
 app.use('/api/auth', auth);
+
+// API Create, Read, Update, Delete for models below
 app.use('/api/users', api(require('./models/user.model')));
 app.use('/api/templates', api(require('./models/template.model')));
 

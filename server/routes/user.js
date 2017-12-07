@@ -17,15 +17,14 @@ userRoutes.post("/:id/addvote", (req, res, next) => {
     .catch(err => res.json(err));
 });
 
-userRoutes.post("/:id/subvote", (req, res, next) => {
-  const templateId = req.params.id;    
-  const votes = req.body.votes;
-  const newVoteCount = votes--;
+// Add user opinion
 
+// User inbox get and post
+userRoutes.get("/inbox", (req, res, next) => {
   Template.findByIdAndUpdate(templateId,
     { "$push": { "votes": newVoteCount } }, { new: true })
     .then(o => res.json(o))
     .catch(err => res.json(err));
 });
 
-module.exports = templateRoutes;
+module.exports = userRoutes;

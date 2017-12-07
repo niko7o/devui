@@ -1,0 +1,21 @@
+nav {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-left: 3em;
+    font-size: 12px;
+    text-transform: lowercase;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: #2DDD6D
+}

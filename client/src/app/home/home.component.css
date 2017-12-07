@@ -1,0 +1,74 @@
+.wrap {
+    display: flex;
+    padding: 50px;
+}
+
+.right {
+    position: relative;
+    float: right;
+    width: 50%;
+    text-align: center;
+}
+
+.right button {
+    vertical-align: middle;    
+}
+
+.center {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.underline {
+    border-bottom: 1px solid #2DDD6D;
+}
+
+.lime-bg {
+    background-color: #2DDD6D;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 120px;
+    line-height: 105px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.slogan {
+    font-size: 10px;
+}
+
+.btns {
+    position: absolute;
+    top: 114px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 40px;
+    width: 100%;
+    margin: auto;
+}
+
+button {
+    text-transform: uppercase;
+    font-size: 10px;
+    margin: 0em 1.2em;
+    width: 120px;
+    height: 40px;
+    border-radius: 50px;
+    letter-spacing: 1px;
+    background-color: white;
+    border: none;
+}
+
+button:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.mini {
+    display: block;
+    font-size: 11px;
+    line-height: 20px;
+}

@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    width: 100vw;
+    min-height: 100vh;
+    box-sizing: border-box;
+    font-family: 'Lora', serif;
+    background-color: #0D2D38;
+    color: white;
+}
+
+.lime { color: #2DDD6D }
