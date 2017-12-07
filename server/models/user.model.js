@@ -12,7 +12,7 @@ const userSchema = new Schema({
   opinions: [{ type: Schema.Types.ObjectId, ref: 'Opinion' }],
   favorites: [{ type: Schema.Types.ObjectId, ref: 'Template' }],
   inbox: [{ type: Schema.Types.ObjectId, ref: 'Message' }]
-}, {
+},{
   timestamps: {
     createdAt: 'created',
     updatedAt: 'updated'
