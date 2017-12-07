@@ -4,9 +4,9 @@ const passport = require('passport');
 const User = require('../models/user.model');
 const Template = require('../models/template.model');
 
-const templateRoutes = express.Router();
+const userRoutes = express.Router();
 
-templateRoutes.post("/:id/addvote", (req, res, next) => {
+userRoutes.post("/:id/addvote", (req, res, next) => {
   const templateId = req.params.id;    
   const votes = req.body.votes;
   const newVoteCount = votes++;
@@ -17,7 +17,7 @@ templateRoutes.post("/:id/addvote", (req, res, next) => {
     .catch(err => res.json(err));
 });
 
-templateRoutes.post("/:id/subvote", (req, res, next) => {
+userRoutes.post("/:id/subvote", (req, res, next) => {
   const templateId = req.params.id;    
   const votes = req.body.votes;
   const newVoteCount = votes--;

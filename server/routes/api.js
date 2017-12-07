@@ -15,9 +15,8 @@ const simpleCRUD = (Model) => {
 
   const model_properties = _.remove(Object.keys(Model.schema.paths), key => !['_id','__v','created','updated'].includes(key));
   const router = express.Router();
-  // console.log(model_properties);
 
-  /* List all elements from #{model} */
+  /* LIST every item of a Model */
   router.get('/', (req, res, next) => {
     Model.find()
       .then(list => res.json(list))
@@ -26,10 +25,8 @@ const simpleCRUD = (Model) => {
 
   /* CREATE a new #{model} */
   router.post('/new', (req, res, next) => {
-
     const obj_data = _.pick(req.body, model_properties);
     const obj = new Model(obj_data);
-
     obj.save()
       .then(o => res.json(o))
       .catch(e => res.json(e));

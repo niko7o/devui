@@ -7,7 +7,7 @@ const authRoutes = express.Router();
 // POST SIGNUP
 authRoutes.post('/signup', (req, res, next) => {
   const { 
-    username, 
+    username,
     password,
     email,
     role
@@ -26,10 +26,14 @@ authRoutes.post('/signup', (req, res, next) => {
     }
     const salt = bcrypt.genSaltSync(10);
     const hashPass = bcrypt.hashSync(password, salt);
+
     const theUser = new User({
       username,
-      password: hashPass
+      password: hashPass,
+      email,
+      role
     });
+    
     return theUser.save();
   })
   .then(newUser => {
@@ -85,7 +89,7 @@ authRoutes.get('/loggedin', (req, res, next) => {
     res.status(200).json(req.user);
     return;
   }
-  res.status(403).json({ message: 'Unauthorized' });
+  res.status(403).json({ message: 'You are not logged in.' });
 });
 
 
