@@ -1,7 +1,15 @@
 .templates {
     margin-top: 50px;
-    width: 100%;
+    width: auto;
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
     height: 430px;
+}
+
+::-webkit-scrollbar {
+    height: 0px;
+    background: transparent;  /* optional: just make scrollbar invisible */
 }
 
 .list {
