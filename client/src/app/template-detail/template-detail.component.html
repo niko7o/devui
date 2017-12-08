@@ -1,3 +1,11 @@
-<p>
-  template-detail works!
-</p>
+
+<div *ngIf="template">
+
+  <div class="template-info">
+    <h2> {{ template.title }} </h2>
+    <h3> {{ template.description }} </h3>
+  </div>
+
+  <button (click)="deleteTemplate(template._id)"> Delete </button>
+  <a [routerLink]="['templates']"> Back to list </a>  
+</div>

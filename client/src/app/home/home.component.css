@@ -64,8 +64,15 @@ button {
 }
 
 button:hover {
-    opacity: 0.9;
     cursor: pointer;
+    background-color: #3F35FC;
+    color: white;
+}
+
+.pink:hover {
+    cursor: pointer;
+    background-color: #fc3581 !important;
+    color: white;
 }
 
 .mini {

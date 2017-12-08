@@ -5,11 +5,8 @@
     overflow-x: scroll;
     overflow-y: hidden;
     height: 430px;
-}
-
-::-webkit-scrollbar {
-    height: 0px;
-    background: transparent;  /* optional: just make scrollbar invisible */
+    overflow: -moz-scrollbars-none;
+    margin-bottom: -17px;
 }
 
 .list {
@@ -48,5 +45,6 @@ button {
 
 button:hover {
     cursor: pointer;
-    background-color: #d450d4;
+    background-color: #3F35FC;
+    color: white;
 }

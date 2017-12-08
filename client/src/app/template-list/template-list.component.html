@@ -4,6 +4,6 @@
       <h3> {{ t.title }} </h3>
       <p> {{ t.description }} </p>
     </div>
-    <button>Details</button>        
+    <a [routerLink]="['template', template._id]"><button >Details</button></a>
   </div>
 </div>

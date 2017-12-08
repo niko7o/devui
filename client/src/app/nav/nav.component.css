@@ -14,7 +14,8 @@ nav ul li {
     list-style: none;
     float: left;
     margin-left: 3em;
-    font-size: 12px;
+    margin-top:-15px;
+    font-size: 13px;
     text-transform: lowercase;
 }
 
