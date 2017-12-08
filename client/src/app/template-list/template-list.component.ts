@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TemplateService } from '../services/template.service';
 
 @Component({
   selector: 'app-template-list',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemplateListComponent implements OnInit {
 
-  constructor() { }
+  templates: Array<any> = [];
+
+  constructor(public tempServ: TemplateService) {
+    this.tempServ.getTemplateList().subscribe( list => {
+      this.templates = list;
+    });
+  }
 
   ngOnInit() {
   }

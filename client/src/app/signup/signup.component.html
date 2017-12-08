@@ -1,15 +1,17 @@
-    <form>
+    <form id="signupform">
       <h2> Sign up </h2>
       
-      <input placeholder="Username" type="text" [(ngModel)]="username" name="username"/><br>
-      <input placeholder="Password" type="password" [(ngModel)]="password" name="password"/><br>
-      <input placeholder="Email" type="text" [(ngModel)]="email" name="email"/><br>
+      <input placeholder="Username" type="text" [(ngModel)]="username" name="username" required/><br>
+      <input placeholder="Password" type="password" [(ngModel)]="password" name="password" required/><br>
+      <input placeholder="Email" type="email" [(ngModel)]="email" name="email" required/><br>
       
-      <select [(ngModel)]="role" name="role">
-        <option>Developer</option>
-        <option>UI Designer</option>
+      <select [(ngModel)]="role" name="role" required>
+        <!-- <option value="" selected disabled hidden>Choose here</option> -->
+        <option value="developer">Developer</option>
+        <option value="ui">UI Designer</option>
       </select>
+
       <br>
       <button (click)="signup(username,password,email,role)">Create Account</button>
+      <p *ngIf="error" class="error"> {{ error.message }} </p>
     </form>
-    <p class="error"> {{ error }} </p>

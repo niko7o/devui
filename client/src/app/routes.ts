@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { InboxComponent } from './inbox/inbox.component';
 import { TemplateDetailComponent } from './template-detail/template-detail.component';
+import { ProfileComponent } from './profile/profile.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -12,6 +13,6 @@ export const routes: Routes = [
     { path: 'templates/:id', component: TemplateDetailComponent },
     { path: 'login', component: LoginComponent },
     { path: 'signup', component: SignupComponent },
-    { path: 'inbox', component: InboxComponent },
+    { path: 'profile', component: ProfileComponent },
     { path: '**', redirectTo: '' }
 ];

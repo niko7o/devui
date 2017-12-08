@@ -1,11 +1,15 @@
 <nav>
+  <div class="logo">
+    <img id="logo" src="assets/images/logo.png" alt="U&I"><br>
+    <span class="slogan">develop: together</span>
+  </div>
   <ul>
     <li><a [routerLink]="['/']">Home</a></li>
     <li><a [routerLink]="['templates']">Templates</a></li>
     <li *ngIf="!auth.user"><a [routerLink]="['signup']">Sign up</a></li>
     <li *ngIf="!auth.user"><a [routerLink]="['login']">Login</a></li>
     <li *ngIf="auth.user"><a [routerLink]="['favorites']">Favorites (2)</a></li>
-    <li *ngIf="auth.user"><a [routerLink]="['inbox']">Inbox</a></li>
+    <li *ngIf="auth.user"><a [routerLink]="['profile']">Profile</a></li>
     <li *ngIf="auth.user"><a class="clickable" (click)="logout()">Logout {{ auth.user.username }}</a></li>
   </ul>
 </nav>

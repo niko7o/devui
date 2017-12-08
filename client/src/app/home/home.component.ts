@@ -17,6 +17,8 @@ export class HomeComponent implements OnInit {
     return role;
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.auth.user);
+  }
 
 }

@@ -1,11 +1,17 @@
 <div class="wrap">
   <div class="float">
-      <img src="../images/logo.png" alt="U&I" /><br>
-      <span class="slogan">develop: together</span>
-    
+    <div *ngIf="!auth.user" class="message">
       <h1>What <br>
-      <span class="lime">are</span> you?</h1>
-    
+        <span class="lime">are</span> you?
+      </h1>
+    </div>
+
+    <div *ngIf="auth.user" class="message">
+        <h1>Welcome <br>
+          <span class="lime">{{ auth.user.username }}</span>
+        </h1>
+      </div>
+
       <span class="mini">
         create an account<br>
         with your <span class="underline">role</span> or <span class="underline">browse</span><br>

@@ -15,6 +15,7 @@ import { SignupComponent } from './signup/signup.component';
 import { InboxComponent } from './inbox/inbox.component';
 
 import { AuthService } from './services/auth.service';
+import { TemplateService } from './services/template.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { AuthService } from './services/auth.service';
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [AuthService],
+  providers: [AuthService, TemplateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
