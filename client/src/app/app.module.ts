@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
+
 import { RouterModule } from '@angular/router';
 import { routes } from './routes';
 
@@ -11,6 +12,9 @@ import { NavComponent } from './nav/nav.component';
 import { TemplateListComponent } from './template-list/template-list.component';
 import { TemplateDetailComponent } from './template-detail/template-detail.component';
 import { ProfileComponent } from './profile/profile.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import { InboxComponent } from './inbox/inbox.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +23,10 @@ import { ProfileComponent } from './profile/profile.component';
     HomeComponent,
     NavComponent,
     TemplateDetailComponent,
-    ProfileComponent
+    ProfileComponent,
+    LoginComponent,
+    SignupComponent,
+    InboxComponent
   ],
   imports: [
     BrowserModule,
