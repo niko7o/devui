@@ -1,3 +1,15 @@
-<p>
-  signup works!
-</p>
+    <form>
+      <h2> Sign up </h2>
+      
+      <input placeholder="Username" type="text" [(ngModel)]="username" name="username"/><br>
+      <input placeholder="Password" type="password" [(ngModel)]="password" name="password"/><br>
+      <input placeholder="Email" type="text" [(ngModel)]="email" name="email"/><br>
+      
+      <select [(ngModel)]="role" name="role">
+        <option>Developer</option>
+        <option>UI Designer</option>
+      </select>
+      <br>
+      <button (click)="signup(username,password,email,role)">Create Account</button>
+    </form>
+    <p class="error"> {{ error }} </p>

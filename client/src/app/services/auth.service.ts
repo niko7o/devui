@@ -4,7 +4,6 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { Observable } from 'rxjs/Rx';
 
-
 const BASE_DOMAIN = 'http://localhost:3000';
 const BASE_URL = `${BASE_DOMAIN}/api/auth`;
 
@@ -33,15 +32,15 @@ export class AuthService {
     return this.user;
   }
 
-  signup(username: string, password: string) {
-    return this.http.post(`${BASE_URL}/signup`, {username, password}, this.options)
+  signup(username: string, password: string, email: string, role: string) {
+    return this.http.post(`${BASE_URL}/signup`, {username, password, email, role}, this.options)
       .map(res => res.json())
       .map(user => this.handleUser(user))
       .catch(this.handleError);
   }
 
   login(username: string, password: string) {
-    console.log(`Login with user:${username} and password ${password}`);
+    console.log(`Login with user: [${username}] and password [${password}]`);
     return this.http.post(`${BASE_URL}/login`, {username, password}, this.options)
       .map(res => res.json())
       .map(user => this.handleUser(user))
@@ -49,6 +48,7 @@ export class AuthService {
   }
 
   logout() {
+    console.log('logging out: ' + this.user);
     return this.http.get(`${BASE_URL}/logout`, this.options)
       .map(res => res.json())
       .map(user => this.handleUser(null))

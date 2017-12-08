@@ -3,10 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
-
 import { RouterModule } from '@angular/router';
 import { routes } from './routes';
-
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { TemplateListComponent } from './template-list/template-list.component';
@@ -15,6 +13,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { InboxComponent } from './inbox/inbox.component';
+
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,7 @@ import { InboxComponent } from './inbox/inbox.component';
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

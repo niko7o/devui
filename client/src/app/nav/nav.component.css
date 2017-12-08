@@ -19,3 +19,7 @@ a {
 a:hover {
     color: #2DDD6D
 }
+
+.clickable:hover {
+    cursor: pointer;
+}
