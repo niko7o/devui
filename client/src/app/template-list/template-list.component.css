@@ -1,0 +1,44 @@
+.templates {
+    margin-top: 50px;
+    width: 100%;
+    height: 430px;
+}
+
+.list {
+    position: relative;
+    height: 430px;
+    display: inline-block;
+}
+
+.template {
+    display: block;
+    float: left;
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    color: black;
+    margin: 20px 20px 20px 0;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.template h1 {
+    text-transform: uppercase;
+}
+
+button {
+    position: absolute;
+    bottom: 63px;
+    left: 0px;
+    padding: 11px 30px;
+    background-color: #2DDD6D;
+    border: none;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #d450d4;
+}

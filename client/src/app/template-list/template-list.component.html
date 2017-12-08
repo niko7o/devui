@@ -1,8 +1,9 @@
-<h1> Templates list </h1>
-
 <div class="templates">
-  <div *ngFor="let t of templates" class="template">
-    <h3> {{ t.title }} </h3>
-    <p> {{ t.description }} </p>
+  <div class="list" *ngFor="let t of templates">
+    <div class="template">
+      <h3> {{ t.title }} </h3>
+      <p> {{ t.description }} </p>
+    </div>
+    <button>Details</button>        
   </div>
 </div>
