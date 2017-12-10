@@ -9,6 +9,13 @@ const BASEURL = `${DOMAIN}${PATH}`;
 
 @Injectable()
 export class TemplateService {
+
+  options: object = {
+      withCredentials: true
+  };
+
+  template: object;
+
   constructor(private http: Http) {}
 
   getTemplateList(): Observable<any> {
@@ -21,6 +28,17 @@ export class TemplateService {
 
   deleteTemplate(id) {
     return this.http.delete(`${BASEURL}/${id}`).map(res => res.json());
+  }
+
+  rateup(id) {
+    console.log('tus muertos');
+    return this.http.post(`${BASEURL}/${id}/rateup`, { }, this.options)
+      .map(res => res.json());
+  }
+
+  ratedown(id) {
+    return this.http.post(`${BASEURL}/${id}/ratedown`, { }, this.options)
+      .map(res => res.json());
   }
 
 }
