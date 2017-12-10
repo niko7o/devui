@@ -2,10 +2,9 @@
     margin-top: 50px;
     width: auto;
     white-space: nowrap;
-    overflow-x: scroll;
+    overflow-x: auto;
     overflow-y: hidden;
     height: 430px;
-    overflow: -moz-scrollbars-none;
     margin-bottom: -17px;
 }
 
@@ -46,5 +45,5 @@ button {
 button:hover {
     cursor: pointer;
     background-color: #3F35FC;
-    color: white;
+    color: white;   
 }

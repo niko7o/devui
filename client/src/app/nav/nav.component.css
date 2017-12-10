@@ -12,11 +12,10 @@ nav ul {
 
 nav ul li {
     list-style: none;
-    float: left;
     margin-left: 3em;
-    margin-top:-15px;
     font-size: 13px;
     text-transform: lowercase;
+    display: inline-block;
 }
 
 a {
