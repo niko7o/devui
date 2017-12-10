@@ -81,3 +81,8 @@ button:hover {
     line-height: 20px;
     letter-spacing: 0.7px;
 }
+
+.featured {
+    color: #2DDD6D;
+    margin-right: 17px;
+}

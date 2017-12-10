@@ -1,0 +1,34 @@
+.title {
+    font-family: 'Raleway';
+    text-transform: uppercase;
+    padding:10px 0;
+    letter-spacing: 1px;
+}
+
+button {
+    padding: 11px 30px;
+    background-color: #2DDD6D;
+    border: none;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin: 10px 10px 10px 0;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: white;
+}
+
+a {
+    color: white;
+}
+
+.votes {
+    margin: 10px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 10px;
+    display: inline-block;
+    background-color: #d63e71;
+}

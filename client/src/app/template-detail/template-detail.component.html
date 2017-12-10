@@ -1,11 +1,29 @@
-
 <div *ngIf="template">
+  <br>
 
-  <div class="template-info">
-    <h2> {{ template.title }} </h2>
-    <h3> {{ template.description }} </h3>
+  <div class="title"> {{ template.title }} - {{ template.creator }}</div>
+  <span class="votes"> {{ template.votes }} </span>
+  <div class="developers"> Developers: {{ template.developers }} </div>
+  <div class="description"> {{ template.description }} </div>
+  <div class="wireframes"> {{ template.images }} </div>
+
+  <div class="right">
+    <button class="btn">Develop</button>
+    <button class="btn">Share</button>
+    <button class="btn" (click)="rateup(template._id)">Rate Up</button>
+    <button class="btn" (click)="ratedown(template._id)">Rate Down</button>
+
+    <div class="updates" *ngFor="let update of template.updates">
+      <span>{{ update }}</span><br>
+    </div>
+
+    <div class="code">
+      <div class="html"></div>
+      <div class="css"></div>
+      <div class="js"></div>
+    </div>
   </div>
 
   <button (click)="deleteTemplate(template._id)"> Delete </button>
-  <a [routerLink]="['templates']"> Back to list </a>  
+  <a [routerLink]="['../']"> Back to list </a>  
 </div>

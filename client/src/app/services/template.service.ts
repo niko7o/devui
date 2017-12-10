@@ -12,20 +12,15 @@ export class TemplateService {
   constructor(private http: Http) {}
 
   getTemplateList(): Observable<any> {
-    console.log(this.http.get(BASEURL));
-    return this.http.get(BASEURL)
-    .map(res => res.json());
+    return this.http.get(BASEURL).map(res => res.json());
   }
 
   getTemplateByID(id): Observable<any> {
-    console.log(this.http.get(`${BASEURL}/${id}`));
-    return this.http.get(`${BASEURL}/${id}`)
-    .map(res => res.json());
+    return this.http.get(`${BASEURL}/${id}`).map(res => res.json());
   }
 
   deleteTemplate(id) {
-    return this.http.delete(`${BASEURL}/${id}`)
-    .map(res => res.json());
+    return this.http.delete(`${BASEURL}/${id}`).map(res => res.json());
   }
 
 }

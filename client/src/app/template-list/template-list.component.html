@@ -3,7 +3,7 @@
     <div class="template">
       <h3> {{ t.title }} </h3>
       <p> {{ t.description }} </p>
+      <a [routerLink]="[t._id]"><button >Details</button></a>
     </div>
-    <a [routerLink]="['template', template._id]"><button >Details</button></a>
   </div>
 </div>

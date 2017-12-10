@@ -16,13 +16,14 @@ export class TemplateDetailComponent implements OnInit {
     public tempServ: TemplateService,
     public route: ActivatedRoute) {
     route.params.subscribe(params => {
-      this.tempServ.getTemplateByID(params['id']).subscribe(template => this.template = template);
+      this.tempServ.getTemplateByID(params['id'])
+      .subscribe(template => this.template = template);
     });
   }
 
   ngOnInit() {}
 
-  deletePhone(id) {
+  deleteTemplate(id) {
     this.tempServ.deleteTemplate(id).subscribe(() => {
       this.router.navigate(['templates']);
     });
