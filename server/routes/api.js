@@ -1,6 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const _ = require('lodash');
+const User = require('../models/user.model');
+const Template = require('../models/template.model');
 
 const checkIDParam = (req, res, next) => {
   if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
@@ -21,7 +23,6 @@ const simpleCRUD = (Model) => {
     switch(Model){
       case 'User': 
         Model.find()
-        .populate()
         .then(list => res.json(list))
         .catch(error => res.json(error));
         break;
@@ -52,6 +53,7 @@ const simpleCRUD = (Model) => {
   /* READ a single Model. */
   router.get('/:id', checkIDParam, (req, res) => {
     Model.findById(req.params.id)
+      .populate('creator')
       .then(o => res.json(o))
       .catch(e => res.json(e));
   });

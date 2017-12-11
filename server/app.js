@@ -61,7 +61,7 @@ app.use((req,res,next) => {
 
 // Customs
 app.use('/', index)
-app.use('/template', template)
+app.use('/api/templates', template)
 app.use('/user', user)
 app.use('/api/auth', auth);
 

@@ -1,15 +1,15 @@
 <div class="templates">
   <div class="list" *ngFor="let t of templates">
     <div class="template">
-      <h3> {{ t.title }} </h3>
-      <p> {{ t.description }} </p>
-      
-      <div> 
+      <div class="text">
+        <h3> {{ t.title }} </h3>
+        <p> {{ t.description }} </p>
+        <p class="small" style="color: gray"> Template: {{ t._id }} </p>
+        <p class="small"> User: {{ t.creator.username }} </p>
+      </div>
+      <div class="votes"> 
         <img class="rate" src="assets/images/rate.png"/> <span>{{ t.votes }}</span>
       </div>
-      
-      <p class="small" style="color: gray"> Template: {{ t._id }} </p>
-      <p class="small"> User: {{ t.creator }} </p>
       <a [routerLink]="[t._id]"><button >Details</button></a>
     </div>
   </div>

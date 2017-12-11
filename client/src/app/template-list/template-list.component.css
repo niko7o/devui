@@ -27,7 +27,7 @@
     color: black;
     margin: 20px 20px 20px 0;
     box-sizing: border-box;
-    padding: 10px;
+    padding: 20px;
 }
 
 .template h3 {
@@ -64,4 +64,13 @@ button:hover {
     background-color: #d63e71;
     padding: 10px;
     border-radius: 13px;
+    vertical-align: middle;
+}
+
+.text {
+    height: 200px;
+}
+
+.votes {
+    text-align: right;
 }

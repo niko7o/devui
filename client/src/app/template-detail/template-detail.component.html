@@ -1,17 +1,29 @@
 <div *ngIf="template">
   <br>
 
-  <div class="title"> {{ template.title }} - {{ template.creator }}</div>
-  <span class="votes"> {{ template.votes }} </span>
-  <div class="developers"> Developers: {{ template.developers }} </div>
-  <div class="description"> {{ template.description }} </div>
-  <div class="wireframes"> {{ template.images }} </div>
+  <div class="info">
+      <div class="title"> {{ template.title }} - <span class="purple user"><img src="assets/images/user.svg" width="16">{{ template.creator.username }}</span> - developers - {{ template.developers }}</div>
+      <span class="votes"> {{ template.votes }} </span>
+      <div class="description"> {{ template.description }} </div>
+  </div>
+
+  <div class="left">
+    <div class="wireframes"> 
+      {{ template.images }}<br>
+      <img src="http://via.placeholder.com/614x345" /><br>
+      <img src="http://via.placeholder.com/614x345" /><br>
+      <img src="http://via.placeholder.com/614x345" /><br>
+    </div>
+  </div>
 
   <div class="right">
-    <button class="btn">Develop</button>
-    <button class="btn">Share</button>
+    <button class="btn">Develop</button><br>
+    <button class="btn">Share</button><br>
     <button class="btn rate" (click)="rateup(template._id)"><img src="assets/images/rate.png"/></button>
-    <button class="btn rate" (click)="ratedown(template._id)"><img class="reverse" src="assets/images/rate.png"/></button>
+    <button class="btn rate" (click)="ratedown(template._id)"><img class="reverse" src="assets/images/rate.png"/></button><br>
+
+    <button (click)="deleteTemplate(template._id)"> Delete </button><br>
+    <button class="btn"><a [routerLink]="['../']"> Back to list </a></button>
 
     <div class="updates" *ngFor="let update of template.updates">
       <span>{{ update }}</span><br>
@@ -23,7 +35,4 @@
       <div class="js"></div>
     </div>
   </div>
-
-  <button (click)="deleteTemplate(template._id)"> Delete </button>
-  <a [routerLink]="['../']"> Back to list </a>  
 </div>

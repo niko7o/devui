@@ -12,7 +12,7 @@ button {
     text-transform: uppercase;
     font-size: 10px;
     letter-spacing: 1px;
-    margin: 10px 10px 10px 0;
+    margin:21px 0px 0px 9px;
 }
 
 button:hover {
@@ -47,4 +47,26 @@ a {
 
 .rate img {
     width: 16px;
+}
+
+.right, .left {
+    float: left;
+}
+
+.left img {
+    margin-bottom: 1em;
+}
+
+.description {
+    font-size: 10px;
+}
+
+.purple {
+    color: #3F35FC;
+    text-transform: lowercase;
+}
+
+.user img{
+    margin-right: 5px;
+    margin-bottom: -2px;
 }
