@@ -23,7 +23,7 @@
     <button class="btn rate" (click)="ratedown(template._id)"><img class="reverse" src="assets/images/rate.png"/></button><br>
 
     <button (click)="deleteTemplate(template._id)"> Delete </button><br>
-    <button class="btn"><a [routerLink]="['../']"> Back to list </a></button>
+    <a [routerLink]="['../']"> <button class="btn">Back to list</button></a>
 
     <div class="updates" *ngFor="let update of template.updates">
       <span>{{ update }}</span><br>

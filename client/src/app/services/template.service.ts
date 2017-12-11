@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
@@ -15,8 +15,30 @@ export class TemplateService {
   };
 
   template: object;
+  user: object;
+  loginEvent: EventEmitter<object> = new EventEmitter();
 
   constructor(private http: Http) {}
+
+  handleError(e) {
+    const error_message = e.json().message;
+    console.error(error_message);
+    return Observable.throw(e.json().message);
+  }
+
+  handleUser(obj) {
+    this.user = obj;
+    this.loginEvent.emit(this.user);
+    return this.user;
+  }
+
+  // in progress
+  create(title: string, description: string) {
+    return this.http.post(`${BASEURL}/new`, { title, description }, this.options)
+      .map(res => res.json())
+      .map(user => this.handleUser(user))
+      .catch(this.handleError);
+  }
 
   getTemplateList(): Observable<any> {
     return this.http.get(BASEURL).map(res => res.json());
@@ -31,7 +53,6 @@ export class TemplateService {
   }
 
   rateup(id) {
-    console.log('tus muertos');
     return this.http.post(`${BASEURL}/${id}/rateup`, { }, this.options)
       .map(res => res.json());
   }

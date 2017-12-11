@@ -25,19 +25,21 @@ const simpleCRUD = (Model) => {
         Model.find()
         .then(list => res.json(list))
         .catch(error => res.json(error));
-        break;
+      break;
       
-        case 'Template': 
+      case 'Template': 
         Model.find()
         .populate('creator')
         .then(list => res.json(list))
         .catch(error => res.json(error));
-        break;
+      break;
 
-        default: 
+      default: 
         Model.find()
+        .populate('creator')
         .then(list => res.json(list))
         .catch(error => res.json(error));
+      break;
     }
   });
 

@@ -6,14 +6,15 @@ import { SignupComponent } from './signup/signup.component';
 import { InboxComponent } from './inbox/inbox.component';
 import { TemplateDetailComponent } from './template-detail/template-detail.component';
 import { ProfileComponent } from './profile/profile.component';
+import { TemplateCreateComponent } from './template-create/template-create.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'templates', component: TemplateListComponent },
+    { path: 'templates/create', component: TemplateCreateComponent },
     { path: 'templates/:id', component: TemplateDetailComponent },
     { path: 'templates/:id/rateup', component: TemplateDetailComponent },
     { path: 'templates/:id/ratedown', component: TemplateDetailComponent },
-    // { path: 'templates/add', component: TemplateAddComponent },
     { path: 'login', component: LoginComponent },
     { path: 'signup', component: SignupComponent },
     { path: 'profile', component: ProfileComponent },
