@@ -10,8 +10,8 @@
   <div class="right">
     <button class="btn">Develop</button>
     <button class="btn">Share</button>
-    <button class="btn" (click)="rateup(template._id)">Rate Up</button>
-    <button class="btn" (click)="ratedown(template._id)">Rate Down</button>
+    <button class="btn rate" (click)="rateup(template._id)"><img src="assets/images/rate.png"/></button>
+    <button class="btn rate" (click)="ratedown(template._id)"><img class="reverse" src="assets/images/rate.png"/></button>
 
     <div class="updates" *ngFor="let update of template.updates">
       <span>{{ update }}</span><br>

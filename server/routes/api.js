@@ -18,9 +18,26 @@ const simpleCRUD = (Model) => {
 
   /* LIST every item of a Model */
   router.get('/', (req, res, next) => {
-    Model.find()
-      .then(list => res.json(list))
-      .catch(error => res.json(error));
+    switch(Model){
+      case 'User': 
+        Model.find()
+        .populate()
+        .then(list => res.json(list))
+        .catch(error => res.json(error));
+        break;
+      
+        case 'Template': 
+        Model.find()
+        .populate('creator')
+        .then(list => res.json(list))
+        .catch(error => res.json(error));
+        break;
+
+        default: 
+        Model.find()
+        .then(list => res.json(list))
+        .catch(error => res.json(error));
+    }
   });
 
   /* CREATE a new #{model} */

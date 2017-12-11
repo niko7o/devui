@@ -8,6 +8,10 @@
     margin-bottom: -17px;
 }
 
+.templates p {
+    white-space: pre-wrap;
+}
+
 .list {
     position: relative;
     height: 430px;
@@ -26,8 +30,10 @@
     padding: 10px;
 }
 
-.template h1 {
+.template h3 {
+    font-family: 'Raleway';
     text-transform: uppercase;
+    color: #13b34b
 }
 
 button {
@@ -46,4 +52,16 @@ button:hover {
     cursor: pointer;
     background-color: #3F35FC;
     color: white;   
+}
+
+.small {
+    font-size: 10px;
+    font-weight: lighter;
+}
+
+.rate {
+    width: 16px;
+    background-color: #d63e71;
+    padding: 10px;
+    border-radius: 13px;
 }

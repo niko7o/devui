@@ -8,17 +8,14 @@ const Template = require('../models/template.model');
 const templateRoutes = express.Router();
 
 /* Rate template up */
-templateRoutes.post("/:id/rateup", (req, res, next) => {
+templateRoutes.get("/:id/rateup", (req, res, next) => {
   let templateID = req.params.id;
-  let hasVoted = false;
-  let userID = req.user._id;
-  
+
   Template.findByIdAndUpdate(templateID, { $inc: {"votes": 1}}, { new: true }) //params: filter, update, options
   .then(editedTemplate => {
       if (!editedTemplate) {
         res.status(400).json({ message: 'This template does not exist, impossible to rate up!'});
       } else {
-        hasVoted = true;
         res.status(200).json(`Vote count incremented to: ${ editedTemplate.votes }`);
       }
   })
@@ -26,8 +23,9 @@ templateRoutes.post("/:id/rateup", (req, res, next) => {
 });
 
 /* Rate template down */
-templateRoutes.post("/:id/ratedown", (req, res, next) => {
+templateRoutes.get("/:id/ratedown", (req, res, next) => {
   let templateID = req.params.id;
+  
   Template.findByIdAndUpdate(templateID, { $inc: {"votes": -1}}, { new: true }) //params: filter, update, options
   .then(editedTemplate => {
       if (!editedTemplate) {

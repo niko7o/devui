@@ -17,7 +17,7 @@ button {
 
 button:hover {
     cursor: pointer;
-    background-color: white;
+    background-color: #d63e71;
 }
 
 a {
@@ -31,4 +31,20 @@ a {
     padding: 10px;
     display: inline-block;
     background-color: #d63e71;
+}
+
+.reverse {
+    transform: rotate(180deg); 
+    -ms-transform: rotate(180deg); 
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+}
+
+.rate {
+    padding: 10px;
+    width: 50px;
+}
+
+.rate img {
+    width: 16px;
 }
