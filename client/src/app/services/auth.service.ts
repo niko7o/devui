@@ -22,7 +22,6 @@ export class AuthService {
 
   handleError(e) {
     const error_message = e.json().message;
-    console.error(error_message);
     return Observable.throw(e.json().message);
   }
 

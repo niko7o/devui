@@ -11,7 +11,7 @@ import { TemplateCreateComponent } from './template-create/template-create.compo
 export const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'templates', component: TemplateListComponent },
-    { path: 'templates/create', component: TemplateCreateComponent },
+    { path: 'templates/new', component: TemplateCreateComponent },
     { path: 'templates/:id', component: TemplateDetailComponent },
     { path: 'templates/:id/rateup', component: TemplateDetailComponent },
     { path: 'templates/:id/ratedown', component: TemplateDetailComponent },

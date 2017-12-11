@@ -1,9 +1,9 @@
 <div *ngIf="auth.user" class="wrap">
     <br>
-    <form id="signupform">      
+    <form id="createform">      
         <input placeholder="title" type="text" [(ngModel)]="title" name="title" required/><br>
-        <textarea placeholder="Write a template description.." type="text" [(ngModel)]="title" name="title"></textarea>
-        <br><button (click)="signup(username,password,email,role)">Create Template</button>
-        <p *ngIf="error" class="error"> {{ error.message }} </p>
+        <textarea [(ngModel)]="description" name="description" rows="12" cols="50" placeholder="Write a description.." ></textarea>
+        <br>
+        <button (click)="create(title, description)">Create Template</button>
       </form>  
 </div>
