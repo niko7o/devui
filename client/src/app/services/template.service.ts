@@ -53,12 +53,14 @@ export class TemplateService {
   }
 
   rateup(id) {
-    return this.http.post(`${BASEURL}/${id}/rateup`, { }, this.options)
-      .map(res => res.json());
+    return this.http.get(`http://localhost:3000/api/templates/${id}/rateup`)
+      .map(res => res.json())
+      .map(user => this.handleUser(user))
+      .catch(this.handleError);
   }
 
   ratedown(id) {
-    return this.http.post(`${BASEURL}/${id}/ratedown`, { }, this.options)
+    return this.http.get(`${BASEURL}/${id}/ratedown`)
       .map(res => res.json());
   }
 

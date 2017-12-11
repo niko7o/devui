@@ -18,9 +18,7 @@ export class TemplateCreateComponent implements OnInit {
     private auth: AuthService
   ) {}
 
-  ngOnInit() {
-    console.log(this.auth.user);
-  }
+  ngOnInit() {}
 
   create(title, description, creator) {
     this.template.create(title, description, creator).subscribe();

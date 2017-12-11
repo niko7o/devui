@@ -16,6 +16,7 @@ export const routes: Routes = [
     { path: 'templates/:id/rateup', component: TemplateDetailComponent },
     { path: 'templates/:id/ratedown', component: TemplateDetailComponent },
     { path: 'login', component: LoginComponent },
+    { path: 'inbox', component: InboxComponent },
     { path: 'signup', component: SignupComponent },
     { path: 'profile', component: ProfileComponent },
     { path: '**', redirectTo: '' }

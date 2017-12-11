@@ -19,8 +19,14 @@
   <div class="right">
     <button class="btn">Develop</button><br>
     <button class="btn">Share</button><br>
-    <button class="btn rate" (click)="rateup(template._id)"><img src="assets/images/rate.png"/></button>
-    <button class="btn rate" (click)="ratedown(template._id)"><img class="reverse" src="assets/images/rate.png"/></button><br>
+    
+    <button class="btn rate" (click)="rateup(template._id)">
+      <img src="assets/images/rate.png"/>
+    </button>
+
+    <button class="btn rate" (click)="ratedown(template._id)">
+      <img class="reverse" src="assets/images/rate.png"/>
+    </button><br>
 
     <button (click)="deleteTemplate(template._id)"> Delete </button><br>
     <a [routerLink]="['../']"> <button class="btn">Back to list</button></a>

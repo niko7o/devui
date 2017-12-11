@@ -55,6 +55,7 @@ a {
 
 .left img {
     margin-bottom: 1em;
+    vertical-align: middle;
 }
 
 .description {
@@ -62,11 +63,12 @@ a {
 }
 
 .purple {
-    color: #3F35FC;
+    color: #2DDD6D;
     text-transform: lowercase;
+    font-size: 11px;
 }
 
 .user img{
     margin-right: 5px;
-    margin-bottom: -2px;
+    vertical-align: middle;
 }

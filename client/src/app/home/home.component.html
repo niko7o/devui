@@ -22,10 +22,10 @@
 
   <div class="right">
     <div class="btns">
-      <button *ngIf="auth.user" class="pink">Templates</button>
-      <button *ngIf="auth.user" class="lime-bg">Create</button>
-      <button *ngIf="!auth.user" class="lime-bg">Developer</button>
-      <button *ngIf="!auth.user" class="pink">UI Designer</button>
+      <button *ngIf="auth.user" [routerLink]="['templates']" class="pink">Templates</button>
+      <button *ngIf="auth.user" [routerLink]="['templates/new']" class="lime-bg">Create</button>
+      <button *ngIf="!auth.user" [routerLink]="['signup']" class="lime-bg">Developer</button>
+      <button *ngIf="!auth.user" [routerLink]="['signup']" class="pink">UI Designer</button>
     </div>
   </div>
 </div>
