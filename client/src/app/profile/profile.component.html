@@ -1,5 +1,20 @@
 <div class="lime" style="margin-top:2em">-</div>
 
 <p>{{ auth.user.username }}, your profile works!</p>
-<p>Role: {{ auth.user.role }}</p>
-<p>Your ID: {{ auth.user._id }}</p>
+<p>Role: <b class="lime">{{ auth.user.role }}</b></p>
+<p>Your ID: <b class="lime">{{ auth.user._id }}</b></p>
+
+<div class="inbox"></div>
+
+<div class="opinions">
+    People's opinions on you:
+    <ul>
+        <li *ngFor="let opinion of auth.user.opinions">{{ opinion }}</li>
+    </ul>
+</div>
+
+<button id="opi" onlick="show()">Leave Opinion</button>
+
+<div class="hidden">
+    <textarea rows="6" cols="20" placeholder="Write your opinion.."></textarea>
+</div>

@@ -19,5 +19,6 @@ export const routes: Routes = [
     { path: 'inbox', component: InboxComponent },
     { path: 'signup', component: SignupComponent },
     { path: 'profile', component: ProfileComponent },
+    { path: 'profile/:id', component: ProfileComponent },
     { path: '**', redirectTo: '' }
 ];

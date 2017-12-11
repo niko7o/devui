@@ -1,0 +1,28 @@
+.hidden {
+    display: block;
+    height: 0px;
+}
+
+.lime { color: #2DDD6D }
+
+button {
+    padding: 13px 30px;
+    background-color: #2DDD6D;
+    border: none;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    width: 167px;
+    margin-bottom: 20px;
+}
+
+button:focus{
+    outline: #2DDD6D;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #3F35FC;
+    color: white;
+}

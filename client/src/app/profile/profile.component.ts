@@ -8,9 +8,12 @@ import { AuthService } from '../services/auth.service';
 })
 export class ProfileComponent implements OnInit {
 
+  user: object;
+
   constructor(private auth: AuthService) { }
 
   ngOnInit() {
+    console.log(this.auth.user);
   }
 
 }
