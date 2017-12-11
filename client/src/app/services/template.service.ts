@@ -32,7 +32,6 @@ export class TemplateService {
     return this.user;
   }
 
-  // in progress
   create(title: string, description: string, creator: string) {
     return this.http.post(`${BASEURL}/new`, { title, description, creator }, this.options)
       .map(res => res.json())

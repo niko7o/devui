@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TemplateService } from '../services/template.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { VoteService } from '../services/vote.service';
 
 @Component({
   selector: 'app-template-detail',
@@ -10,6 +9,7 @@ import { VoteService } from '../services/vote.service';
 })
 export class TemplateDetailComponent implements OnInit {
 
+  voted = false;
   template: any;
 
   constructor(
@@ -34,10 +34,12 @@ export class TemplateDetailComponent implements OnInit {
   }
 
   rateup(id) {
+    this.voted = true;
     this.tempServ.rateup(id).subscribe(template => this.template = template);
   }
 
   ratedown(id) {
+    this.voted = true;
     this.tempServ.ratedown(id).subscribe(template => this.template = template);
   }
 

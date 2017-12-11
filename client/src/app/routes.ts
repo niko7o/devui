@@ -3,7 +3,7 @@ import { HomeComponent } from './home/home.component';
 import { TemplateListComponent } from './template-list/template-list.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
-import { InboxComponent } from './inbox/inbox.component';
+// import { InboxComponent } from './inbox/inbox.component';
 import { TemplateDetailComponent } from './template-detail/template-detail.component';
 import { ProfileComponent } from './profile/profile.component';
 import { TemplateCreateComponent } from './template-create/template-create.component';
@@ -16,9 +16,9 @@ export const routes: Routes = [
     { path: 'templates/:id/rateup', component: TemplateDetailComponent },
     { path: 'templates/:id/ratedown', component: TemplateDetailComponent },
     { path: 'login', component: LoginComponent },
-    { path: 'inbox', component: InboxComponent },
+    // { path: 'inbox', component: InboxComponent },
     { path: 'signup', component: SignupComponent },
     { path: 'profile', component: ProfileComponent },
-    { path: 'profile/:id', component: ProfileComponent },
+    { path: 'users/:id', component: ProfileComponent },
     { path: '**', redirectTo: '' }
 ];
