@@ -25,7 +25,7 @@
     height: 300px;
     background-color: white;
     color: black;
-    margin: 20px 20px 20px 0;
+    margin: 20px 7px 20px 0;
     box-sizing: border-box;
     padding: 20px;
 }
@@ -73,4 +73,18 @@ button:hover {
 
 .votes {
     text-align: right;
+}
+
+svg {
+    margin-top: 20px;
+    margin-right: 25px;
+}
+
+.active-heart {
+    fill: white;
+}
+
+.active-heart:hover {
+    cursor: pointer;
+    fill:#F05228;
 }
