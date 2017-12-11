@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TemplateService } from '../services/template.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-template-detail',

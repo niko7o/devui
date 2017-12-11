@@ -1,5 +1,6 @@
 .wrap {
     display: flex;
+    overflow-y: hidden;
 }
 
 .right {
@@ -11,12 +12,6 @@
 
 .right button {
     vertical-align: middle;    
-}
-
-.movingImage {
-    position: absolute;
-    z-index: -1;
-    max-width:60%;
 }
 
 .center {

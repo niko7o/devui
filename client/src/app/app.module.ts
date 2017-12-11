@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { routes } from './routes';
+
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { TemplateListComponent } from './template-list/template-list.component';
@@ -13,7 +14,6 @@ import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { InboxComponent } from './inbox/inbox.component';
-
 import { AuthService } from './services/auth.service';
 import { TemplateService } from './services/template.service';
 import { TemplateCreateComponent } from './template-create/template-create.component';

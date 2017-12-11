@@ -1,0 +1,18 @@
+.mover {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 200px;
+    max-height: 100vh;
+    background-color: #274651;
+    z-index: -1;
+    transform:  rotate(44deg) scale(3) skew(7deg) translate(0px);
+    -webkit-transform:  rotate(44deg) scale(3) skew(7deg) translate(0px);
+    -moz-transform: rotate(44deg) scale(3) skew(7deg) translate(0px);
+    -o-transform:  rotate(44deg) scale(3) skew(7deg) translate(0px);
+    -ms-transform:  rotate(44deg) scale(3) skew(7deg) translate(0px);
+}

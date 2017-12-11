@@ -8,6 +8,7 @@ body {
     font-family: 'Lora', serif;
     background-color: #0D2D38;
     color: white;
+    overflow: hidden;
 }
 
 .lime { color: #2DDD6D }
