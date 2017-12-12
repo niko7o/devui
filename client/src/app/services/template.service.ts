@@ -51,10 +51,6 @@ export class TemplateService {
     return this.http.get(BASEURL).map(res => res.json());
   }
 
-  getFavoritesList(): Observable<any> {
-    return this.http.get(`${BASEURL}/favorites`).map(res => res.json());
-  }
-
   getTemplateByID(id): Observable<any> {
     return this.http.get(`${BASEURL}/${id}`).map(res => res.json());
   }

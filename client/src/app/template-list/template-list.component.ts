@@ -25,7 +25,9 @@ export class TemplateListComponent implements OnInit {
     this.tempServ.addfavorite(templateid, currentuser).subscribe();
   }
 
-  removeFavorite(id) {}
+  removeFavorite(templateid, currentuser) {
+    this.tempServ.removefavorite(templateid, currentuser).subscribe();
+  }
 
   ngOnInit() {
   }

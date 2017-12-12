@@ -88,3 +88,12 @@ svg {
     cursor: pointer;
     fill:#F05228;
 }
+
+.no-heart {
+    fill:#F05228;
+}
+
+.no-heart:hover {
+    cursor: pointer;
+    fill: white;
+}
