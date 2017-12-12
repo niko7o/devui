@@ -17,6 +17,7 @@ export class FavoritesComponent implements OnInit {
     private auth: AuthService,
     private router: Router
   ) {
+    console.log(this.auth.user.favorites);
     this.tempServ.getTemplateList().subscribe( list => {
       this.templates = list;
     });
