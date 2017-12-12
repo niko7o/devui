@@ -1,44 +1,46 @@
-<div *ngIf="template">
-  <br>
+<div class="wrapper">
+  <div *ngIf="template">
+    <br>
 
-  <div class="info">
-      <div class="title"> {{ template.title }} - <span class="purple user"><img src="assets/images/user.svg" width="16">{{ template.creator.username }}</span> - developers - {{ template.developers }}</div>
-      <span class="votes"> {{ template.votes }} </span>
-      <div class="description"> {{ template.description }} </div>
-  </div>
-
-  <div class="left">
-    <div class="wireframes"> 
-      {{ template.images }}<br>
-      <img src="http://via.placeholder.com/614x345" /><br>
-      <img src="http://via.placeholder.com/614x345" /><br>
-      <img src="http://via.placeholder.com/614x345" /><br>
-    </div>
-  </div>
-
-  <div class="right">
-    <button class="btn">Develop</button><br>
-    <button class="btn">Message</button><br>
-    
-    <button class="btn rate" ng-disabled="this.voted == true" ng-model="voted" (click)="rateup(template._id)">
-      <img src="assets/images/rate.png"/>
-    </button>
-
-    <button class="btn rate" ng-disabled="this.voted == true" ng-model="voted" (click)="ratedown(template._id)">
-      <img class="reverse" src="assets/images/rate.png"/>
-    </button><br>
-
-    <button (click)="deleteTemplate(template._id)"> Delete </button><br>
-    <a [routerLink]="['../']"> <button class="btn">Back to list</button></a>
-
-    <div class="updates" *ngFor="let update of template.updates">
-      <span>{{ update }}</span><br>
+    <div class="info">
+        <div class="title"> {{ template.title }} - <span class="purple user"><img src="assets/images/user.svg" width="16">{{ template.creator.username }}</span> - developers - {{ template.developers }}</div>
+        <span class="votes"> {{ template.votes }} </span>
+        <div class="description"> {{ template.description }} </div>
     </div>
 
-    <div class="code">
-      <div class="html"></div>
-      <div class="css"></div>
-      <div class="js"></div>
+    <div class="left">
+      <div class="wireframes"> 
+        {{ template.images }}<br>
+        <img src="http://via.placeholder.com/614x345" /><br>
+        <img src="http://via.placeholder.com/614x345" /><br>
+        <img src="http://via.placeholder.com/614x345" /><br>
+      </div>
+    </div>
+
+    <div class="right">
+      <button class="btn">Develop</button><br>
+      <button class="btn">Message</button><br>
+      
+      <button class="btn rate" ng-disabled="this.voted == true" ng-model="voted" (click)="rateup(template._id)">
+        <img src="assets/images/rate.png"/>
+      </button>
+
+      <button class="btn rate" ng-disabled="this.voted == true" ng-model="voted" (click)="ratedown(template._id)">
+        <img class="reverse" src="assets/images/rate.png"/>
+      </button><br>
+
+      <button (click)="deleteTemplate(template._id)"> Delete </button><br>
+      <a [routerLink]="['../']"> <button class="btn">Back to list</button></a>
+
+      <div class="updates" *ngFor="let update of template.updates">
+        <span>{{ update }}</span><br>
+      </div>
+
+      <div class="code">
+        <div class="html"></div>
+        <div class="css"></div>
+        <div class="js"></div>
+      </div>
     </div>
   </div>
 </div>

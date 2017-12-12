@@ -24,12 +24,10 @@ export class FavoritesComponent implements OnInit {
 
   addFavorite(templateid, currentuser) {
     this.tempServ.addfavorite(templateid, currentuser).subscribe();
-    this.router.navigate(['templates']);
   }
 
   removeFavorite(templateid, currentuser) {
     this.tempServ.removefavorite(templateid, currentuser).subscribe();
-    this.router.navigate(['templates']);
   }
 
   ngOnInit() {

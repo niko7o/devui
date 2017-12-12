@@ -5,7 +5,6 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { routes } from './routes';
-
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { TemplateListComponent } from './template-list/template-list.component';
