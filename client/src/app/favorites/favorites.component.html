@@ -16,7 +16,7 @@
           <button id="details">Details</button>
       </a>
       
-      <a [routerLink]="[t._id]/remove">
+      <a (click)="removeFavorite(t._id, this.auth.user._id)">
         <button id="remove" style="right: 8px !important; left: unset !important;">Remove</button>
       </a>
     </div>

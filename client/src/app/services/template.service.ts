@@ -32,12 +32,16 @@ export class TemplateService {
     return this.user;
   }
 
+  /* Creating New Template */
+
   create(title: string, description: string, creator: string) {
     return this.http.post(`${BASEURL}/new`, { title, description, creator }, this.options)
       .map(res => res.json())
       .map(user => this.handleUser(user))
       .catch(this.handleError);
   }
+
+  /* Favoriting */
 
   addfavorite(templateID: string, currentuser: any) {
     console.log('favoriting template: ' + templateID + ' for user ' + currentuser);
@@ -46,6 +50,16 @@ export class TemplateService {
     .map(user => this.handleUser(user))
     .catch(this.handleError);
   }
+
+  removefavorite(templateID: string, currentuser: any) {
+    console.log('removing template: ' + templateID + ' for user ' + currentuser);
+    return this.http.post(`${BASEURL}/${templateID}/removefavorite`, { }, this.options)
+    .map(res => res.json())
+    .map(user => this.handleUser(user))
+    .catch(this.handleError);
+  }
+
+  /* Template */
 
   getTemplateList(): Observable<any> {
     return this.http.get(BASEURL).map(res => res.json());
@@ -59,16 +73,14 @@ export class TemplateService {
     return this.http.delete(`${BASEURL}/${id}`).map(res => res.json());
   }
 
+  /* Rating up and down */
+
   rateup(id): Observable<any> {
-    return this.http.get(`http://localhost:3000/api/templates/${id}/rateup`)
-      .map(res => res.json())
-      .map(user => this.handleUser(user))
-      .catch(this.handleError);
+    return this.http.get(`${BASEURL}/${id}/rateup`).map(res => res.json());
   }
 
   ratedown(id): Observable<any> {
-    return this.http.get(`${BASEURL}/${id}/ratedown`)
-      .map(res => res.json());
+    return this.http.get(`${BASEURL}/${id}/ratedown`).map(res => res.json());
   }
 
 }
