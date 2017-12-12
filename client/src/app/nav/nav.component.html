@@ -9,7 +9,7 @@
     <li *ngIf="!auth.user"><a [routerLink]="['signup']">Sign up</a></li>
     <li *ngIf="!auth.user"><a [routerLink]="['login']">Login</a></li>
     <li *ngIf="auth.user"><a [routerLink]="['templates/new']">Create</a></li>
-    <li *ngIf="auth.user"><a [routerLink]="['favorites']">Favorites (2)</a></li>
+    <li *ngIf="auth.user"><a [routerLink]="['favorites']">Favorites ({{ auth.user.favorites.length }})</a></li>
     <!-- <li *ngIf="auth.user"><a [routerLink]="['inbox']">Inbox</a></li> -->
     <li *ngIf="auth.user"><a class="clickable" (click)="logout()">Logout {{ auth.user.username }}</a></li>
   </ul>

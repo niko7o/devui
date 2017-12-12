@@ -23,6 +23,7 @@ const simpleCRUD = (Model) => {
     switch(Model){
       case 'User': 
         Model.find()
+        .populate('favorites')
         .then(list => res.json(list))
         .catch(error => res.json(error));
       break;

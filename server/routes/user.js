@@ -27,4 +27,13 @@ userRoutes.get("/inbox", (req, res, next) => {
     .catch(err => res.json(err));
 });
 
+// Get user's favorites
+//   userRoutes.get('/favorites', (req, res, next) => {
+//     User.findById(req.user._id)
+//     .populate('favorites')
+//     .then(list => res.json(list))
+//     .catch(error => res.json(error));
+//     break;
+//  });
+
 module.exports = userRoutes;

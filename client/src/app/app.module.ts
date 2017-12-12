@@ -17,6 +17,7 @@ import { InboxComponent } from './inbox/inbox.component';
 import { AuthService } from './services/auth.service';
 import { TemplateService } from './services/template.service';
 import { TemplateCreateComponent } from './template-create/template-create.component';
+import { FavoritesComponent } from './favorites/favorites.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { TemplateCreateComponent } from './template-create/template-create.compo
     LoginComponent,
     SignupComponent,
     InboxComponent,
-    TemplateCreateComponent
+    TemplateCreateComponent,
+    FavoritesComponent
   ],
   imports: [
     BrowserModule,

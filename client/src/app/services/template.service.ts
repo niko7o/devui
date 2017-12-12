@@ -39,26 +39,38 @@ export class TemplateService {
       .catch(this.handleError);
   }
 
+  addfavorite(templateID: string, currentuser: any) {
+    console.log('favoriting template: ' + templateID + ' for user ' + currentuser);
+    return this.http.post(`${BASEURL}/${templateID}/addfavorite`, { }, this.options)
+    .map(res => res.json())
+    .map(user => this.handleUser(user))
+    .catch(this.handleError);
+  }
+
   getTemplateList(): Observable<any> {
     return this.http.get(BASEURL).map(res => res.json());
+  }
+
+  getFavoritesList(): Observable<any> {
+    return this.http.get(`${BASEURL}/favorites`).map(res => res.json());
   }
 
   getTemplateByID(id): Observable<any> {
     return this.http.get(`${BASEURL}/${id}`).map(res => res.json());
   }
 
-  deleteTemplate(id) {
+  deleteTemplate(id): Observable<any> {
     return this.http.delete(`${BASEURL}/${id}`).map(res => res.json());
   }
 
-  rateup(id) {
+  rateup(id): Observable<any> {
     return this.http.get(`http://localhost:3000/api/templates/${id}/rateup`)
       .map(res => res.json())
       .map(user => this.handleUser(user))
       .catch(this.handleError);
   }
 
-  ratedown(id) {
+  ratedown(id): Observable<any> {
     return this.http.get(`${BASEURL}/${id}/ratedown`)
       .map(res => res.json());
   }
