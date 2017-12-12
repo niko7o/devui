@@ -7,7 +7,7 @@ const User = require('./user.model');
 const templateSchema = new Schema({
   title: { type: String, unique: true, required: true },
   description: { type: String, required: true },
-  images: [{ type: String}],
+  images: [{ type: String }],
   developers: [{ type: Schema.Types.ObjectId, ref: 'User' }],
   updates: [{ type: Schema.Types.ObjectId, ref: 'Update' }],
   favorites: { type : Number, default: 0 }, // only for favorites count

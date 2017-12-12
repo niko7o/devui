@@ -1,9 +1,9 @@
 <div *ngIf="auth.user" class="wrap">
     <br>
     <form id="createform">
-      <input placeholder="title" type="text" [(ngModel)]="title" name="title" required/><br>
-      <textarea [(ngModel)]="description" name="description" rows="12" cols="50" placeholder="Write a description.." ></textarea>
-      <br>
+      <input placeholder="Enter a project title" type="text" [(ngModel)]="title" name="title" required/><br>
+      <textarea class="desc" [(ngModel)]="description" name="description" rows="10" cols="40" placeholder="Write a description.." ></textarea>
+      <input type="file" [(ngModel)]="images" name="images">
       <button (click)="create(title, description, this.auth.user._id)">Create Template</button>
     </form>  
 </div>
