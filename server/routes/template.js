@@ -1,11 +1,12 @@
 const express = require('express');
 const passport = require('passport');
 const bodyParser = require('body-parser');
-
 const User = require('../models/user.model');
 const Template = require('../models/template.model');
-
 const templateRoutes = express.Router();
+
+const multer = require('multer');
+const upload = multer({ dest: 'public/images/uploads' })
 
 /* Rate template up */
 templateRoutes.get("/:id/rateup", (req, res, next) => {
@@ -90,6 +91,18 @@ templateRoutes.post("/:id/removefavorite", (req, res, next) => {
         res.status(200).json(`REMOVED template from FAVORITES.`);
       }
   })
+});
+
+/* */
+templateRoutes.post('/uploadPhoto', upload.single('image'), (req, res, next) => {
+  if (req.file) {
+    console.log("BACK");
+    console.log(req.file.path);
+    res.status(200).json(req.file.path);
+  } else {
+    res.status(500).json("some error");
+  }
+  console.log(req.file);
 });
 
 module.exports = templateRoutes;

@@ -8,14 +8,15 @@
 
     <image-upload
     [max]="3"
-    [url]="'http://localhost:3000/public/images/uploads'"
+    [url]="'http://localhost:3000/api/templates/uploadPhoto'"
     [buttonCaption]="'Select Images!'"
     [dropBoxMessage]="'Drop your images here!'"
     [extensions]="['jpg','png','gif']"
     [class]="'customClass'"      
     (removed)="onRemoved($event)"
-    (uploadFinished)="onUploadFinished($event)"
-    (uploadStateChanged)="onUploadStateChanged($event)">
+    (uploadFinished)="onUploadFinished($event)">
   </image-upload>
+
+  <img src="http://localhost:3000/public/images/uploads/41c02f7f680742a5a3f652493c5174ee">
   
 </div>
