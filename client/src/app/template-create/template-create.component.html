@@ -2,8 +2,20 @@
     <br>
     <form id="createform">
       <input placeholder="Enter a project title" type="text" [(ngModel)]="title" name="title" required/><br>
-      <textarea class="desc" [(ngModel)]="description" name="description" rows="10" cols="40" placeholder="Write a description.." ></textarea>
-      <input type="file" [(ngModel)]="images" name="images">
+      <textarea class="desc" [(ngModel)]="description" name="description" rows="10" cols="40" placeholder="Write a description.." ></textarea>      
       <button (click)="create(title, description, this.auth.user._id)">Create Template</button>
     </form>  
+
+    <image-upload
+    [max]="3"
+    [url]="'http://localhost:3000/public/images/uploads'"
+    [buttonCaption]="'Select Images!'"
+    [dropBoxMessage]="'Drop your images here!'"
+    [extensions]="['jpg','png','gif']"
+    [class]="'customClass'"      
+    (removed)="onRemoved($event)"
+    (uploadFinished)="onUploadFinished($event)"
+    (uploadStateChanged)="onUploadStateChanged($event)">
+  </image-upload>
+  
 </div>
