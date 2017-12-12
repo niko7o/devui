@@ -35,3 +35,65 @@ button:hover {
     background-color: #3F35FC;
     color: white;
 }
+
+/* Dropdown */
+.ui-drop {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 10px;
+}
+  
+.ui-drop select {
+    background-color: #e0b438;
+    color: black;
+    font-size: 13px;
+    padding: .7em;
+    padding-right: 2.5em;
+    border: 0;
+    margin: 0;
+    border-radius: 4px;
+    text-indent: 0.01px;
+    text-overflow: '';
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    min-width: 200px;
+}
+
+.ui-drop select::-ms-expand {
+    display: none;
+}
+
+.ui-drop::before, .ui-drop::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+}
+
+.ui-drop::after { /*  Custom dropdown arrow */
+    content: "\25BC";
+    height: 1em;
+    font-size: .625em;
+    line-height: 1;
+    right: 1.2em;
+    top: 50%;
+    margin-top: -.5em;
+}
+
+.ui-drop::before { /*  Custom dropdown arrow cover */
+    width: 2em;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 0 3px 3px 0;
+    background-color: rgba(0,0,0,.2);
+}
+
+.ui-drop::after {
+    color: rgba(0,0,0,.6);
+}
+
+.ui-drop select[disabled] {
+    color: rgba(0,0,0,.25);
+}

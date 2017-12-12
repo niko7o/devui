@@ -1,15 +1,17 @@
-    <form id="signupform">      
-      <input placeholder="username" type="text" [(ngModel)]="username" name="username" required/><br>
-      <input placeholder="password" type="password" [(ngModel)]="password" name="password" required/><br>
-      <input placeholder="email" type="email" [(ngModel)]="email" name="email" required/><br>
-      
-      <select [(ngModel)]="role" name="role" required>
-        <!-- <option value="" selected disabled hidden>Choose here</option> -->
-        <option value="developer">Developer</option>
-        <option value="ui">UI Designer</option>
-      </select>
+<form id="signupform">      
+  <input placeholder="username" type="text" [(ngModel)]="username" name="username" autofocus/><br>
+  <input placeholder="password" type="password" [(ngModel)]="password" name="password" required/><br>
+  <input placeholder="email" type="email" [(ngModel)]="email" name="email" required/><br>
+  
+  <span class="ui-drop">
+    <select [(ngModel)]="role" name="role" required>
+      <!-- <option value="" selected disabled hidden>Choose here</option> -->
+      <option value="developer">Developer</option>
+      <option value="ui">UI Designer</option>
+    </select>
+  </span>
 
-      <br>
-      <button (click)="signup(username,password,email,role)">Create Account</button>
-      <p *ngIf="error" class="error"> {{ error.message }} </p>
-    </form>
+  <br>
+  <button (click)="signup(username,password,email,role)">Create Account</button>
+  <p *ngIf="error" class="error"> {{ error.message }} </p>
+</form>
