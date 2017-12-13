@@ -78,7 +78,7 @@ templateRoutes.post("/:id/addfavorite", (req, res, next) => {
 /* Remove template from user's favorites */
 templateRoutes.post("/:id/removefavorite", (req, res, next) => {
   let templateID = req.params.id;
-  let userID = req.user._id; // UNDER TESTING, but should be user.locals
+  let userID = req.user._id;
   let hasFavorited = true;
   
   User.findByIdAndUpdate(userID, { "$pull": { "favorites": templateID } }, { new: true })
@@ -87,13 +87,12 @@ templateRoutes.post("/:id/removefavorite", (req, res, next) => {
       if (!editedUser) {
         res.status(400).json({ message: 'Impossible to unfavorite! Template does not exist'});
       } else {
-        hasFavorited = false;
         res.status(200).json(`REMOVED template from FAVORITES.`);
       }
   })
 });
 
-/* */
+/* Upload photo */
 templateRoutes.post('/uploadPhoto', upload.single('image'), (req, res, next) => {
   if (req.file) {
     console.log(req.file.path);

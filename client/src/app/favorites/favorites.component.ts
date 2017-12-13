@@ -17,7 +17,6 @@ export class FavoritesComponent implements OnInit {
     private auth: AuthService,
     private router: Router
   ) {
-    console.log(this.auth.user.favorites);
     this.tempServ.getTemplateList().subscribe( list => {
       this.templates = list;
     });
@@ -25,10 +24,12 @@ export class FavoritesComponent implements OnInit {
 
   addFavorite(templateid, currentuser) {
     this.tempServ.addfavorite(templateid, currentuser).subscribe();
+    setTimeout(function(){ location.reload(); }, 4);
   }
 
   removeFavorite(templateid, currentuser) {
     this.tempServ.removefavorite(templateid, currentuser).subscribe();
+    setTimeout(function(){ location.reload(); }, 4);
   }
 
   ngOnInit() {

@@ -29,6 +29,7 @@ button {
     letter-spacing: 1px;
     margin-top: 10px;
     width: 167px;
+    transition: 0.55s background-color linear;
 }
 
 button:focus{
@@ -42,5 +43,5 @@ button:hover {
 }
 
 image-upload {
-    
+
 }

@@ -23,10 +23,12 @@ export class TemplateListComponent implements OnInit {
 
   addFavorite(templateid, currentuser) {
     this.tempServ.addfavorite(templateid, currentuser).subscribe();
+    setTimeout(function(){ location.reload(); }, 4);
   }
 
   removeFavorite(templateid, currentuser) {
     this.tempServ.removefavorite(templateid, currentuser).subscribe();
+    setTimeout(function(){ location.reload(); }, 4);
   }
 
   ngOnInit() {
