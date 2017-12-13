@@ -44,4 +44,8 @@ export class TemplateDetailComponent implements OnInit {
     this.tempServ.ratedown(id).subscribe(template => this.template = template);
   }
 
+  devAdd(templateID, userID) {
+    this.tempServ.devAdd(templateID, userID).subscribe(template => this.template = template);
+  }
+
 }

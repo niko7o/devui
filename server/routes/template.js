@@ -103,4 +103,30 @@ templateRoutes.post('/uploadPhoto', upload.single('image'), (req, res, next) => 
   console.log(req.file);
 });
 
+/* Add developer to template's developers */
+templateRoutes.get("/:id/devadd", (req, res, next) => {
+  
+    let templateID = req.params.id;
+    let userID = req.user._id;
+    //let isDev = false;
+
+    // Template.findById(templateID).then(result => {
+    //   for(let i = 0; i < result.developers.length; i++){
+    //     if(result.developers[i]._id === userID){
+    //       isDev = true;
+    //     }
+    //   }
+    // });
+    
+    Template.findByIdAndUpdate(templateID, { "$push": { "developers": userID } }, { new: true })
+      .populate('developers')
+      .then(newTemplate => {
+        if (!newTemplate) {
+          res.status(400).json({ message: 'Could not add developer to this template'});
+        } else if(!isDev){
+          res.status(200).json(`Added dev ${user} to template. `);
+        }
+    })
+});
+
 module.exports = templateRoutes;

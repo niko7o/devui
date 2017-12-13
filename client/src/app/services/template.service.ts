@@ -46,7 +46,7 @@ export class TemplateService {
 
   addfavorite(templateID: string, currentuser: any) {
     console.log('favoriting template: ' + templateID + ' for user ' + currentuser);
-    return this.http.post(`${BASEURL}/${templateID}/addfavorite`, { }, this.options)
+    return this.http.post(`${BASEURL}/${templateID}/addfavorite`, {}, this.options)
     .map(res => res.json())
     .map(user => this.handleUser(user))
     .catch(this.handleError);
@@ -54,7 +54,7 @@ export class TemplateService {
 
   removefavorite(templateID: string, currentuser: any) {
     console.log('removing template: ' + templateID + ' for user ' + currentuser);
-    return this.http.post(`${BASEURL}/${templateID}/removefavorite`, { }, this.options)
+    return this.http.post(`${BASEURL}/${templateID}/removefavorite`, {}, this.options)
     .map(res => res.json())
     .map(user => this.handleUser(user))
     .catch(this.handleError);
@@ -82,6 +82,17 @@ export class TemplateService {
 
   ratedown(id): Observable<any> {
     return this.http.get(`${BASEURL}/${id}/ratedown`).map(res => res.json());
+  }
+
+  /* Add developers to template */
+
+  devAdd(templateID: string, userID: any): Observable<any> {
+    console.log(`adding dev ${userID} para la template ${templateID}`);
+    console.log(this.template);
+    return this.http.post(`${BASEURL}/${templateID}/devadd`, {}, this.options)
+    .map(res => res.json())
+    .map(user => this.handleUser(user))
+    .catch(this.handleError);
   }
 
 }

@@ -19,6 +19,7 @@ export const routes: Routes = [
     { path: 'templates/:id/removefavorite', component: TemplateListComponent },
     { path: 'templates/:id/rateup', component: TemplateDetailComponent },
     { path: 'templates/:id/ratedown', component: TemplateDetailComponent },
+    { path: 'templates/:id/devadd', component: TemplateDetailComponent },
     { path: 'login', component: LoginComponent },
     { path: 'signup', component: SignupComponent },
     { path: 'profile', component: ProfileComponent },

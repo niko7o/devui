@@ -18,7 +18,8 @@
     </div>
     
     <div class="middle">
-        <button class="btn">Develop</button><br>
+        <button class="btn" (click)="devAdd(template._id, this.auth.user._id)">Develop</button><br>
+        
         <button class="btn">Message</button><br>
         
         <button class="btn rate" ng-disabled="this.voted == true" ng-model="voted" (click)="rateup(template._id)">
