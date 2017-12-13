@@ -48,6 +48,7 @@ const simpleCRUD = (Model) => {
   router.post('/new', (req, res, next) => {
     const obj_data = _.pick(req.body, model_properties);
     const obj = new Model(obj_data);
+    console.log(obj_data);
     obj.save()
       .then(o => res.json(o))
       .catch(e => res.json(e));
