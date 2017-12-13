@@ -3,8 +3,9 @@ import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { Observable } from 'rxjs/Rx';
+import { environment } from '../../environments/environment';
 
-const BASE_DOMAIN = 'http://localhost:3000';
+const BASE_DOMAIN = environment.baseurl;
 const BASE_URL = `${BASE_DOMAIN}/api/auth`;
 
 @Injectable()

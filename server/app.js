@@ -71,9 +71,9 @@ app.use('/api/templates', template)
 app.use('/user', user)
 app.use('/api/auth', auth);
 
-// app.use(function(req, res) {
-//   res.sendFile(__dirname + '/public/index.html');
-// })
+app.use(function(req, res) {
+  res.sendFile(__dirname + '/public/index.html');
+})
 
 // API Create, Read, Update, Delete for models below
 app.use('/api/users', api(require('./models/user.model')));

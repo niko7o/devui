@@ -2,8 +2,9 @@ import { Injectable, EventEmitter } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
+import { environment } from '../../environments/environment';
 
-const DOMAIN = 'http://localhost:3000';
+const DOMAIN = environment.baseurl;
 const PATH = '/api/templates';
 const BASEURL = `${DOMAIN}${PATH}`;
 
