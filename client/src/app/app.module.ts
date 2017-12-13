@@ -17,7 +17,7 @@ import { AuthService } from './services/auth.service';
 import { TemplateService } from './services/template.service';
 import { TemplateCreateComponent } from './template-create/template-create.component';
 import { FavoritesComponent } from './favorites/favorites.component';
-import { ImageUploadModule } from "angular2-image-upload";
+import { ImageUploadModule } from 'angular2-image-upload';
 
 @NgModule({
   declarations: [

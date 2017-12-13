@@ -74,7 +74,7 @@ a {
 }
 
 .wrapper {
-    overflow: auto;
+    overflow-y: scroll !important;
 }
 
 .code {

@@ -37,6 +37,8 @@ var corsOptions = {
 
 app.use(cors(corsOptions));
 
+// mv client/dist/* server/public
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -45,7 +47,10 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
 app.use(session({
   secret: 'ui rocks',
   resave: false,
@@ -60,11 +65,15 @@ app.use((req,res,next) => {
   next();
 });
 
-// Customs
+// Custom routes
 app.use('/', index)
 app.use('/api/templates', template)
 app.use('/user', user)
 app.use('/api/auth', auth);
+
+app.use(function(req, res) {
+  res.sendfile(__dirname + '/public/index.html');
+})
 
 // API Create, Read, Update, Delete for models below
 app.use('/api/users', api(require('./models/user.model')));

@@ -1,22 +1,20 @@
 <div *ngIf="auth.user" class="wrap">
-    <br>
     <form id="createform">
       <input placeholder="Enter a project title" type="text" [(ngModel)]="title" name="title" required/><br>
       <textarea class="desc" [(ngModel)]="description" name="description" rows="10" cols="40" placeholder="Write a description.." ></textarea>      
+      <image-upload
+          [max]="3"
+          [url]="'http://localhost:3000/api/templates/uploadPhoto'"
+          [buttonCaption]="'Upload Wireframes'"
+          [dropBoxMessage]="'Or drop your images here!'"
+          [extensions]="['jpg','png','gif']"
+          [class]="'uploader'"      
+          (removed)="onRemoved($event)"
+          (uploadFinished)="onUploadFinished($event)">
+      </image-upload>
       <button (click)="create(title, description, this.auth.user._id)">Create Template</button>
-    </form>  
-
-    <image-upload
-    [max]="3"
-    [url]="'http://localhost:3000/api/templates/uploadPhoto'"
-    [buttonCaption]="'Select Images!'"
-    [dropBoxMessage]="'Drop your images here!'"
-    [extensions]="['jpg','png','gif']"
-    [class]="'customClass'"      
-    (removed)="onRemoved($event)"
-    (uploadFinished)="onUploadFinished($event)">
-  </image-upload>
-
-  <img src="http://localhost:3000/public/images/uploads/41c02f7f680742a5a3f652493c5174ee">
-  
+    </form>
 </div>
+
+<img src="http://localhost:3000/images/uploads/one">
+<img src="http://localhost:3000/images/uploads/two">
