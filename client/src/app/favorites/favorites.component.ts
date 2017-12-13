@@ -17,19 +17,19 @@ export class FavoritesComponent implements OnInit {
     private auth: AuthService,
     private router: Router
   ) {
-    this.tempServ.getTemplateList().subscribe( list => {
+    this.tempServ.getTemplateList().subscribe(list => {
       this.templates = list;
     });
   }
 
   addFavorite(templateid, currentuser) {
     this.tempServ.addfavorite(templateid, currentuser).subscribe();
-    setTimeout(function(){ location.reload(); }, 4);
+    setTimeout(function(){ location.reload(); }, 10);
   }
 
   removeFavorite(templateid, currentuser) {
     this.tempServ.removefavorite(templateid, currentuser).subscribe();
-    setTimeout(function(){ location.reload(); }, 4);
+    setTimeout(function(){ location.reload(); }, 10);
   }
 
   ngOnInit() {
