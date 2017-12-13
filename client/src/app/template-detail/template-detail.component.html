@@ -3,22 +3,27 @@
     <br>
 
     <div class="info">
-        <div class="title"> {{ template.title }} - <span class="purple user"><img src="assets/images/user.svg" width="16">{{ template.creator.username }}</span> - developers - {{ template.developers }}</div>
+        <div class="title"> {{ template.title }} - <span class="purple user"><img src="assets/images/user.svg" width="16">{{ template.creator.username }}</span></div>
+        <div class="developers">
+          <ul *ngFor="let dev of template.developers">
+            <li>{{ dev }}</li>
+          </ul>
+        </div>
         <span class="votes"> {{ template.votes }} </span>
         <div class="description"> {{ template.description }} </div>
     </div>
 
-    <div class="left">
+    <!-- <div class="left">
       <div class="wireframes"> 
         {{ template.images }}<br>
         <img src="assets/images/614x345.png" /><br>
         <img src="assets/images/614x345.png" /><br>
         <img src="assets/images/614x345.png" /><br>
       </div>
-    </div>
+    </div> -->
     
     <div class="middle">
-        <button class="btn" (click)="devAdd(template._id, this.auth.user._id)">Develop</button><br>
+        <button class="btn" (click)="devadd(template._id, this.auth.user._id)">Develop</button><br>
         
         <button class="btn">Message</button><br>
         

@@ -108,15 +108,6 @@ templateRoutes.get("/:id/devadd", (req, res, next) => {
   
     let templateID = req.params.id;
     let userID = req.user._id;
-    //let isDev = false;
-
-    // Template.findById(templateID).then(result => {
-    //   for(let i = 0; i < result.developers.length; i++){
-    //     if(result.developers[i]._id === userID){
-    //       isDev = true;
-    //     }
-    //   }
-    // });
     
     Template.findByIdAndUpdate(templateID, { "$push": { "developers": userID } }, { new: true })
       .populate('developers')

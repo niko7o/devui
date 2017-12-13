@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TemplateService } from '../services/template.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-template-detail',
@@ -12,21 +13,20 @@ export class TemplateDetailComponent implements OnInit {
 
   voted = false;
   template: any;
+  user: object;
 
   constructor(
     public router: Router,
     public tempServ: TemplateService,
-    public route: ActivatedRoute,
+    private auth: AuthService,
+    public route: ActivatedRoute
   ) {
     route.params.subscribe(params => {
-      this.tempServ.getTemplateByID(params['id'])
-      .subscribe(template => this.template = template);
+      this.tempServ.getTemplateByID(params['id']).subscribe(template => this.template = template);
     });
   }
 
-  ngOnInit() {
-    console.log(this.template);
-  }
+  ngOnInit() { }
 
   deleteTemplate(id) {
     this.tempServ.deleteTemplate(id).subscribe(() => {
@@ -44,8 +44,8 @@ export class TemplateDetailComponent implements OnInit {
     this.tempServ.ratedown(id).subscribe(template => this.template = template);
   }
 
-  devAdd(templateID, userID) {
-    this.tempServ.devAdd(templateID, userID).subscribe(template => this.template = template);
+  devadd(templateID, userID) {
+    this.tempServ.devadd(templateID, userID).subscribe(template => this.template = template);
   }
 
 }

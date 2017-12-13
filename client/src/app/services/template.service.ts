@@ -60,6 +60,16 @@ export class TemplateService {
     .catch(this.handleError);
   }
 
+    /* Add developers to template */
+
+  devadd(templateID: string, currentuser: any): Observable<any> {
+    console.log('adding template: ' + templateID + ' for dev ' + currentuser);
+    return this.http.post(`${BASEURL}/${templateID}/devadd`, {}, this.options)
+    .map(res => res.json())
+    .map(user => this.handleUser(user))
+    .catch(this.handleError);
+  }
+
   /* Template */
 
   getTemplateList(): Observable<any> {
@@ -82,17 +92,6 @@ export class TemplateService {
 
   ratedown(id): Observable<any> {
     return this.http.get(`${BASEURL}/${id}/ratedown`).map(res => res.json());
-  }
-
-  /* Add developers to template */
-
-  devAdd(templateID: string, userID: any): Observable<any> {
-    console.log(`adding dev ${userID} para la template ${templateID}`);
-    console.log(this.template);
-    return this.http.post(`${BASEURL}/${templateID}/devadd`, {}, this.options)
-    .map(res => res.json())
-    .map(user => this.handleUser(user))
-    .catch(this.handleError);
   }
 
 }
