@@ -6,7 +6,7 @@ const Template = require('../models/template.model');
 const templateRoutes = express.Router();
 
 const multer = require('multer');
-const upload = multer({ dest: 'public/images/uploads' })
+const upload = multer({ dest: 'uploads' })
 
 /* Rate template up */
 templateRoutes.get("/:id/rateup", (req, res, next) => {
