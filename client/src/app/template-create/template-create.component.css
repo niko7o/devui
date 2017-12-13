@@ -41,14 +41,3 @@ button:hover {
     background-color: #3F35FC;
     color: white;
 }
-
-.uploader label {
-    color: #3e3e3e;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 10px;
-    padding: 10px 20px;
-    text-transform: uppercase;
-    background-color: #fbb321;
-    font-family: sans-serif;
-}

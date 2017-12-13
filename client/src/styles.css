@@ -33,3 +33,26 @@ body {
     color: white;
     text-align: center;
 }
+
+.img-ul-file-upload[_ngcontent-c3] {
+    padding: 16px 0px !important;
+}
+
+.uploader div label {
+    all: unset;
+    color: #3e3e3e !important;
+    display: inline-block !important;
+    font-size: 10px !important;
+    padding: 10px 20px !important;
+    text-transform: uppercase !important;
+    background-color: #fbb321 !important;
+    font-family: sans-serif !important;
+    -moz-box-shadow: unset !important;
+    -webkit-box-shadow: unset !important;
+    box-shadow: unset !important;
+    margin-right:1em !important;
+}
+
+.uploader div label:hover {
+    background-color: #e7405c !important;
+}

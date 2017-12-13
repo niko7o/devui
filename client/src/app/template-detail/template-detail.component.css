@@ -60,6 +60,7 @@ a {
 
 .description {
     font-size: 10px;
+    max-width: 614px;
 }
 
 .purple {
