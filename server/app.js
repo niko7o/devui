@@ -25,6 +25,8 @@ mongoose.connect(process.env.DBURL).then(() =>{
 
 var whitelist = [
     'http://localhost:4200',
+    'http://devui.herokuapp.com',
+    'http://localhost:3000/api/templates/uploadPhoto'
 ];
 
 var corsOptions = {
