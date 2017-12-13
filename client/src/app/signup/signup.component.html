@@ -1,17 +1,33 @@
-<form id="signupform">      
-  <input placeholder="username" type="text" [(ngModel)]="username" name="username" autofocus/><br>
-  <input placeholder="password" type="password" [(ngModel)]="password" name="password" required/><br>
+<form id="signupform" #myForm="ngForm" novalidate>      
+  <input placeholder="username" type="text" [(ngModel)]="username" #myUsername="ngModel" name="username" maxlength="12" required/><br>
+  <div *ngIf="myUsername.length === 12 && (myUsername.dirty || myUsername.touched)">
+      <p class="error" [hidden]="!myUsername.errors">
+        Sorry! The maximum username length is 12.
+      </p>
+  </div>
+
+  <input placeholder="password" type="password" [(ngModel)]="password" #myPassword="ngModel" name="password" required/><br>
+  <div *ngIf="myPassword.errors && (myPassword.dirty || myPassword.touched)">
+      <p class="error" [hidden]="!myPassword.errors.required">
+        Password is required
+      </p>
+  </div>
+  
   <input placeholder="email" type="email" [(ngModel)]="email" name="email" required/><br>
   
   <span class="ui-drop">
-    <select [(ngModel)]="role" name="role" required>
-      <!-- <option value="" selected disabled hidden>Choose here</option> -->
+    <select [(ngModel)]="role" #myRole="ngModel" name="role" required>
       <option value="developer">Developer</option>
       <option value="ui">UI Designer</option>
     </select>
   </span>
+  <div *ngIf="myRole.errors && (myRole.dirty || myRole.touched)">
+      <p class="error" [hidden]="!myRole.errors.required">
+        Role is required
+      </p>
+  </div>
 
   <br>
-  <button (click)="signup(username,password,email,role)">Create Account</button>
+  <button [disabled]="myPassword.errors || myUsername.errors || myRole.errors" (click)="signup(username,password,email,role)">Create Account</button>
   <p *ngIf="error" class="error"> {{ error.message }} </p>
 </form>

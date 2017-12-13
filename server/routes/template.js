@@ -96,11 +96,10 @@ templateRoutes.post("/:id/removefavorite", (req, res, next) => {
 /* */
 templateRoutes.post('/uploadPhoto', upload.single('image'), (req, res, next) => {
   if (req.file) {
-    console.log("BACK");
     console.log(req.file.path);
     res.status(200).json(req.file.path);
   } else {
-    res.status(500).json("some error");
+    res.status(500).json("There was an error uploading this photo. Try again.");
   }
   console.log(req.file);
 });

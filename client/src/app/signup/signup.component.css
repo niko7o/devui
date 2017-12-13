@@ -98,3 +98,13 @@ button:hover {
 .ui-drop select[disabled] {
     color: rgba(0,0,0,.25);
 }
+
+.error {
+    font-size: 10px;
+    color: #e0b438;
+}
+
+button:disabled {
+    opacity: 0.7;
+    background-color: #323131;
+}

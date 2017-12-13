@@ -6,7 +6,7 @@
 }
 
 button {
-    padding: 11px 30px;
+    padding: 10px 29px ;
     background-color: #2DDD6D;
     border: none;
     text-transform: uppercase;
@@ -75,4 +75,15 @@ a {
 
 .wrapper {
     overflow: auto;
+}
+
+.code {
+    margin-top: 20px;
+    width: 250px;
+    height: 100px;
+    background-color: white;
+}
+
+.left, .middle, .right {
+    float: left;
 }
