@@ -12,9 +12,7 @@
           (removed)="onRemoved($event)"
           (uploadFinished)="onUploadFinished($event)">
       </image-upload>
-      <button (click)="create(title, description, this.auth.user._id)">Create Template</button>
+      <!-- Falta pushear las images al array de template.images -->
+      <button (click)="create(title, description, this.auth.user._id, images)">Create Template</button>
     </form>
 </div>
-
-<img src="http://localhost:3000/images/uploads/one">
-<img src="http://localhost:3000/images/uploads/two">

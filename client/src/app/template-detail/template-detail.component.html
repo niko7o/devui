@@ -17,16 +17,18 @@
         </div>
     </div>
 
-    <!-- <div class="left">
-      <div class="wireframes"> 
-        {{ template.images }}<br>
-        <img src="assets/images/614x345.png" /><br>
-        <img src="assets/images/614x345.png" /><br>
-        <img src="assets/images/614x345.png" /><br>
-      </div>
-    </div> -->
+    <div class="wireframes"> 
+      <ul>
+        <li *ngFor="let imageURL of template.images; index as i">
+          <img src="{{ imageURL }}">
+        </li>
+      </ul>{{ template.images }}<br>
+      <img src="assets/images/614x345.png" /><br>
+      <img src="assets/images/614x345.png" /><br>
+      <img src="assets/images/614x345.png" /><br>
+    </div>
     
-    <div class="middle">
+    <div class="right">
         <button class="btn develop" (click)="devadd(template._id, this.auth.user._id)">Develop</button><br>
         
         <button class="btn message">Message</button><br>
@@ -41,18 +43,6 @@
   
         <button class="delete" *ngIf="template.creator.username == this.auth.user.username" (click)="deleteTemplate(template._id)"> Delete </button><br>
         <a [routerLink]="['../']"> <button class="btn">Back to list</button></a>
-    </div>
-
-    <div class="right">
-      <div class="updates" *ngFor="let update of template.updates">
-        <span>{{ update }}</span><br>
-      </div>
-
-      <div class="code">
-        <div class="html"></div>
-        <div class="css"></div>
-        <div class="js"></div>
-      </div>
     </div>
 
     <div id="message-modal" hidden>

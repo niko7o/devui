@@ -28,7 +28,9 @@ export class TemplateCreateComponent implements OnInit {
 
   onUploadFinished(e) {
     this.photo[e.file.name] = e.serverResponse._body.slice(1, -1);
+    this.template.images.push(this.photo[e.file.name]);
   }
+
   onRemoved(e) {
     delete this.photo[e.file.name];
   }

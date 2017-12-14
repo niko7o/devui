@@ -45,10 +45,6 @@ a {
     width: 16px;
 }
 
-.right, .left {
-    float: left;
-}
-
 .left img {
     margin-bottom: 1em;
     vertical-align: middle;
@@ -139,4 +135,13 @@ button:disabled {
     display: inline-block;
     font-size: 12px;
     padding: 3px 8px;
+}
+
+.wireframes, .right {
+    float: left;
+}
+
+.right {
+    margin-top: 16px;
+    margin-left: 19px;
 }
