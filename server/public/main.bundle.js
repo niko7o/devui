@@ -1067,7 +1067,6 @@ var TemplateDetailComponent = (function () {
     TemplateDetailComponent.prototype.devadd = function (templateID, userID) {
         var _this = this;
         this.tempServ.devadd(templateID, userID).subscribe(function (template) { return _this.template = template; });
-        // this.template.developers.push(this.user);
         setTimeout(function () {
             location.reload();
         }, 50);
@@ -1148,15 +1147,15 @@ var TemplateListComponent = (function () {
     }
     TemplateListComponent.prototype.addFavorite = function (templateid, currentuser) {
         this.tempServ.addfavorite(templateid, currentuser).subscribe();
-        // setTimeout(function(){
-        //   location.reload();
-        // }, 50);
+        setTimeout(function () {
+            location.reload();
+        }, 50);
     };
     TemplateListComponent.prototype.removeFavorite = function (templateid, currentuser) {
         this.tempServ.removefavorite(templateid, currentuser).subscribe();
-        // setTimeout(function(){
-        //   location.reload();
-        // }, 50);
+        setTimeout(function () {
+            location.reload();
+        }, 50);
     };
     TemplateListComponent.prototype.ngOnInit = function () { };
     TemplateListComponent = __decorate([

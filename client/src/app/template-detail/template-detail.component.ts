@@ -51,7 +51,6 @@ export class TemplateDetailComponent implements OnInit {
 
   devadd(templateID, userID) {
     this.tempServ.devadd(templateID, userID).subscribe(template => this.template = template);
-    // this.template.developers.push(this.user);
     setTimeout(function(){
       location.reload();
     }, 50);
