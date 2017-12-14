@@ -22,7 +22,6 @@ const simpleCRUD = (Model) => {
   router.get('/', (req, res, next) => {
         Model.find()
         .populate('creator')
-        .populate('developers')
         .then(list => res.json(list))
         .catch(error => res.json(error));
   });
@@ -41,6 +40,7 @@ const simpleCRUD = (Model) => {
   router.get('/:id', checkIDParam, (req, res) => {
     Model.findById(req.params.id)
       .populate('creator')
+      .populate('developers','username')
       .then(o => res.json(o))
       .catch(e => res.json(e));
   });
