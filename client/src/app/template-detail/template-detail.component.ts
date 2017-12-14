@@ -13,6 +13,8 @@ export class TemplateDetailComponent implements OnInit {
 
   template: any;
   user: object;
+  votedUp: Number = 0;
+  votedDown: Number = 0;
 
   constructor(
     public router: Router,
@@ -36,11 +38,15 @@ export class TemplateDetailComponent implements OnInit {
   rateup(id) {
     this.template.votes++;
     this.tempServ.rateup(id).subscribe(template => this.template = template);
+    this.votedUp = 1;
+    this.votedDown = 0;
   }
 
   ratedown(id) {
     this.template.votes--;
     this.tempServ.ratedown(id).subscribe(template => this.template = template);
+    this.votedDown = 1;
+    this.votedUp = 0;
   }
 
   devadd(templateID, userID) {

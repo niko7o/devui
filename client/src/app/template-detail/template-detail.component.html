@@ -7,7 +7,7 @@
           - <span class="purple user">{{ template.creator.username }}</span>
           - developers <img src="assets/images/user.svg" width="16"> <span class="devcount">{{ template.developers.length }}</span>
           <ul>
-            <li *ngFor="let dev of template.developers; index as i">{{ dev.username}}</li>
+            <li *ngFor="let dev of template.developers; index as i">{{ dev.username }}</li>
           </ul>
         </div>
 
@@ -30,11 +30,11 @@
         
         <button class="btn message">Message</button><br>
         
-        <button id="rateup" class="btn rate" ng-model="voted" (click)="rateup(template._id)">
+        <button id="rateup" ng-disabled="isDisabled" (click)="isDisabled = true" class="btn rate" ng-model="voted" (click)="rateup(template._id);">
           <img src="assets/images/rate.png"/>
         </button>
   
-        <button id="ratedown" class="btn rate" ng-model="voted" (click)="ratedown(template._id)">
+        <button id="ratedown" [disabled]="isDisabled" (click)="isDisabled = true" class="btn rate" ng-model="voted" (click)="ratedown(template._id);">
           <img class="reverse" src="assets/images/rate.png"/>
         </button><br>
   

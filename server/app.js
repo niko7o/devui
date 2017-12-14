@@ -6,8 +6,7 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const multer = require('multer');
-
+require('./config/multer.js');
 const api = require('./routes/api');
 const template = require('./routes/template');
 const user = require('./routes/user');
