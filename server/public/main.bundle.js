@@ -1148,15 +1148,15 @@ var TemplateListComponent = (function () {
     }
     TemplateListComponent.prototype.addFavorite = function (templateid, currentuser) {
         this.tempServ.addfavorite(templateid, currentuser).subscribe();
-        setTimeout(function () {
-            location.reload();
-        }, 50);
+        // setTimeout(function(){
+        //   location.reload();
+        // }, 50);
     };
     TemplateListComponent.prototype.removeFavorite = function (templateid, currentuser) {
         this.tempServ.removefavorite(templateid, currentuser).subscribe();
-        setTimeout(function () {
-            location.reload();
-        }, 50);
+        // setTimeout(function(){
+        //   location.reload();
+        // }, 50);
     };
     TemplateListComponent.prototype.ngOnInit = function () { };
     TemplateListComponent = __decorate([
