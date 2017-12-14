@@ -160,3 +160,37 @@ button:disabled {
 .right {
     margin-left: 19px;
 }
+
+#message-modal {
+    display: block;
+    width: 650px;
+    height: 326px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    position: absolute;
+    background-color: white;
+    border: 10px solid royalblue;
+    box-shadow: 0px 0px 20px black;
+    padding: 40px 20px;
+}
+
+#message-modal p {
+    font-family: sans-serif;
+}
+
+#message-modal textarea {
+    font-family: sans-serif;
+    font-size: 12px;
+    padding: 10px;
+    width: 90%;
+    height: 190px;
+    outline: none;
+    border: 1px solid #f6f6f6;
+}
+
+#message-modal p {
+    color: black;
+}

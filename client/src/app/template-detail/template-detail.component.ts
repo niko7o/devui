@@ -13,8 +13,10 @@ export class TemplateDetailComponent implements OnInit {
 
   template: any;
   user: object;
-  votedUp: Number = 0;
-  votedDown: Number = 0;
+  votedUp: any;
+  votedDown: any;
+  showModal: any;
+  
 
   constructor(
     public router: Router,

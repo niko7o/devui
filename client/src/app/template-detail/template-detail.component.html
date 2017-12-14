@@ -28,7 +28,7 @@
     <div class="right">
         <button class="btn develop" (click)="devadd(template._id, this.auth.user._id)">Develop</button><br>
         
-        <button class="btn message">Message</button><br>
+        <button class="btn message" (click)="showModal = true">Message</button><br>
         
         <button id="rateup" [disabled]="isVotedUp" (click)="isVotedUp = true; isVotedDown = false" class="btn rate" ng-model="voted" (click)="rateup(template._id);">
           <img src="assets/images/rate.png"/>
@@ -42,9 +42,10 @@
         <a [routerLink]="['../']"> <button class="btn">Back to list</button></a>
     </div>
 
-    <div id="message-modal" hidden>
-        <textarea placeholder="Write a message.." cols="10" rows="30"></textarea>
-        <button>Send</button>
+    <div id="message-modal" *ngIf="showModal">
+        <p>Do you have any questions for <b>{{ template.creator.username }}</b> ?</p>
+        <textarea placeholder="Write a message.." cols="10" rows="20"></textarea><br>        
+        <button (click)="showModal = false">Close</button> <button id="sendmsg">Send</button>
     </div>
 
   </div>
