@@ -5,8 +5,8 @@
     <div class="info">
         <div class="title"> {{ template.title }} - <span class="purple user"><img src="assets/images/user.svg" width="16">{{ template.creator.username }}</span></div>
         <div class="developers">
-          <ul *ngFor="let dev of template.developers">
-            <li>{{ dev }}</li>
+          <ul *ngFor="let dev of template.developers; index as i">
+            <li>{{i}} # {{ dev }}</li>
           </ul>
         </div>
         <span class="votes"> {{ template.votes }} </span>

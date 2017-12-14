@@ -1,24 +1,24 @@
 <div class="templates">
-  <div class="list" *ngFor="let t of templates">
+  <div class="list" *ngFor="let temp of templates">
 
     <div class="template">
       <div class="text">
-        <h3> {{ t.title }} </h3>
-        <p> {{ t.description }} </p>
-        <p class="small" style="color: gray"> ID: {{ t._id }} </p>
-        <p class="small author"> <img width="16" src="assets/images/user.svg" />{{ t.creator.username }} </p>
+        <h3> {{ temp.title }} </h3>
+        <p> {{ temp.description }} </p>
+        <p class="small" style="color: gray"> ID: {{ temp._id }} </p>
+        <p class="small author"> <img width="16" src="assets/images/user.svg" />{{ temp.creator.username }} </p>
       </div>
       <div class="votes"> 
-        <img class="rate" src="assets/images/rate.png"/> <span>{{ t.votes }}</span>
+        <img class="rate" src="assets/images/rate.png"/> <span>{{ temp.votes }}</span>
       </div>
-      <a [routerLink]="[t._id]">
+      <a [routerLink]="[temp._id]">
         <button >Details</button>
       </a>
     </div>
 
     <div class="ratings" *ngIf="auth.user">
       <!-- if template is NOT favorited by user -->
-      <a *ngIf="this.auth.user.favorites.indexOf(t._id) == -1" (click)="addFavorite(t._id, this.auth.user._id)">
+      <a *ngIf="this.auth.user.favorites.indexOf(temp._id) == -1" (click)="addFavorite(temp._id, this.auth.user._id)">
           <svg width="16" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 426.668 426.668" style="enable-background:new 0 0 426.668 426.668;" xml:space="preserve">
             <path class="active-heart" d="M401.788,74.476c-63.492-82.432-188.446-33.792-188.446,49.92
             c0-83.712-124.962-132.356-188.463-49.92c-65.63,85.222-0.943,234.509,188.459,320.265
@@ -27,7 +27,7 @@
       </a>
 
       <!-- if template is ALREADY favorited by user -->
-      <a *ngIf="this.auth.user.favorites.indexOf(t._id) !== -1" (click)="removeFavorite(t._id, this.auth.user._id)">
+      <a *ngIf="this.auth.user.favorites.indexOf(temp._id) !== -1" (click)="removeFavorite(temp._id, this.auth.user._id)">
         <svg width="16" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 426.668 426.668" style="enable-background:new 0 0 426.668 426.668;" xml:space="preserve">
           <path class="no-heart" d="M401.788,74.476c-63.492-82.432-188.446-33.792-188.446,49.92
           c0-83.712-124.962-132.356-188.463-49.92c-65.63,85.222-0.943,234.509,188.459,320.265

@@ -60,9 +60,17 @@ export class TemplateService {
     .catch(this.handleError);
   }
 
-    /* Add developers to template */
+    /* Add or remove developers to specific template */
 
   devadd(templateID: string, currentuser: any): Observable<any> {
+    console.log('adding template: ' + templateID + ' for dev ' + currentuser);
+    return this.http.post(`${BASEURL}/${templateID}/devadd`, {}, this.options)
+    .map(res => res.json())
+    .map(user => this.handleUser(user))
+    .catch(this.handleError);
+  }
+
+  devrem(templateID: string, currentuser: any): Observable<any> {
     console.log('adding template: ' + templateID + ' for dev ' + currentuser);
     return this.http.post(`${BASEURL}/${templateID}/devadd`, {}, this.options)
     .map(res => res.json())

@@ -104,7 +104,7 @@ templateRoutes.post('/uploadPhoto', upload.single('image'), (req, res, next) => 
 });
 
 /* Add developer to template's developers */
-templateRoutes.get("/:id/devadd", (req, res, next) => {
+templateRoutes.post("/:id/devadd", (req, res, next) => {
   
     let templateID = req.params.id;
     let userID = req.user._id;
@@ -114,8 +114,10 @@ templateRoutes.get("/:id/devadd", (req, res, next) => {
       .then(newTemplate => {
         if (!newTemplate) {
           res.status(400).json({ message: 'Could not add developer to this template'});
-        } else if(!isDev){
+        } else {
           res.status(200).json(`Added dev ${user} to template. `);
+          console.log('- + -')
+          console.log(newTemplate);
         }
     })
 });
