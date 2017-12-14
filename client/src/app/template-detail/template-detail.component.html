@@ -12,7 +12,6 @@
         </div>
 
         <div class="creation"> {{ template.created | date:"dd/MM/yy" }} </div>
-        <span id="votes" class="votes"> {{ template.votes }} </span>
         <div class="description"> {{ template.description }} Lorem fistrum jarl mamaar torpedo benemeritaar diodenoo llevame al sircoo la caidita de la pradera. A wan la caidita ese que llega apetecan fistro diodeno a gramenawer. Me cago en tus muelas te voy a borrar el cerito por la gloria de mi madre diodeno. Condemor la caidita a gramenawer condemor fistro papaar papaar ese que llega apetecan la caidita. Sexuarl quietooor ese hombree hasta luego Lucas. </div>
     </div>
 
@@ -30,11 +29,11 @@
         
         <button class="btn message">Message</button><br>
         
-        <button id="rateup" ng-disabled="isDisabled" (click)="isDisabled = true" class="btn rate" ng-model="voted" (click)="rateup(template._id);">
+        <button id="rateup" [disabled]="isVotedUp" (click)="isVotedUp = true; isVotedDown = false" class="btn rate" ng-model="voted" (click)="rateup(template._id);">
           <img src="assets/images/rate.png"/>
         </button>
-  
-        <button id="ratedown" [disabled]="isDisabled" (click)="isDisabled = true" class="btn rate" ng-model="voted" (click)="ratedown(template._id);">
+        <span id="votes" class="votes"> {{ template.votes }} </span>
+        <button id="ratedown" [disabled]="isVotedDown" (click)="isVotedDown = true; isVotedUp = false" class="btn rate" ng-model="voted" (click)="ratedown(template._id);">
           <img class="reverse" src="assets/images/rate.png"/>
         </button><br>
   

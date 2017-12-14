@@ -5,41 +5,19 @@
     letter-spacing: 1px;
 }
 
-button {
-    padding: 10px 29px;
-    width: 150px;
-    background-color: #2DDD6D;
-    border: none;
-    text-transform: uppercase;
-    font-size: 10px;
-    letter-spacing: 1px;
-    margin:21px 20px 0px 9px;
-}
-
-button:hover {
-    cursor: pointer;
-    background-color: #3b3b3b;
-    color: white;
-}
-
 a {
     color: white;
 }
 
-.devcount {
-    
-}
-
 .votes {
-    margin: 10px;
-    font-size: 10px;
-    letter-spacing: 1px;
-    padding: 10px;
+    font-size: 14px;
+    padding: 13px 12px;
     display: inline-block;
-    background-color: #d63e71;
-    width: 15px;
+    background-color: #5d5a5b;
     text-align: center;
     border-radius: 50%;
+    font-family: sans-serif;
+    margin: 0px 0px;
 }
 
 .reverse {
@@ -91,6 +69,7 @@ a {
 
 .code {
     margin-top: 20px;
+    margin-left: 20px;
     width: 250px;
     height: 100px;
     background-color: white;
@@ -126,4 +105,32 @@ a {
 .message {
     background-color: #d63e71;
     color: white;
+}
+
+button {
+    padding: 10px 29px;
+    width: 150px;
+    background-color: #2DDD6D;
+    border: none;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin:20px 0 0 0;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #3b3b3b;
+    color: white;
+}
+
+button:disabled {
+    background-color:#b2c972;
+}
+
+.creation {
+    background-color: #274651;
+    display: inline-block;
+    font-size: 12px;
+    padding: 3px 8px;
 }
