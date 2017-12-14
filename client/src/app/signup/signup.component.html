@@ -12,22 +12,27 @@
         Password is required
       </p>
   </div>
-  
-  <input placeholder="email" type="email" [(ngModel)]="email" name="email" required/><br>
-  
+
   <span class="ui-drop">
-    <select [(ngModel)]="role" #myRole="ngModel" name="role" required>
-      <option value="developer">Developer</option>
-      <option value="ui">UI Designer</option>
-    </select>
-  </span>
-  <div *ngIf="myRole.errors && (myRole.dirty || myRole.touched)">
-      <p class="error" [hidden]="!myRole.errors.required">
-        Role is required
+      <select [(ngModel)]="role" #myRole="ngModel" name="role" required>
+        <option value="developer">Developer</option>
+        <option value="ui">UI Designer</option>
+      </select>
+    </span>
+    <div *ngIf="myRole.errors && (myRole.dirty || myRole.touched)">
+        <p class="error" [hidden]="!myRole.errors.required">
+          Role is required
+        </p>
+    </div>
+  
+  <input placeholder="email" type="email" [(ngModel)]="email" #myEmail="ngModel" name="email" required/><br>
+  <div *ngIf="myEmail.errors && (myEmail.dirty || myEmail.touched)">
+      <p class="error" [hidden]="!myEmail.errors.required">
+        Email is required
       </p>
   </div>
 
   <br>
-  <button [disabled]="myPassword.errors || myUsername.errors || myRole.errors" (click)="signup(username,password,email,role)">Create Account</button>
+  <button [disabled]="myPassword.errors || myUsername.errors || myRole.errors || myEmail.errors" (click)="signup(username,password,email,role)">Create Account</button>
   <p *ngIf="error" class="error"> {{ error.message }} </p>
 </form>

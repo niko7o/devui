@@ -3,16 +3,22 @@
     <br>
 
     <div class="info">
-        <div class="title"> {{ template.title }} - <span class="purple user"><img src="assets/images/user.svg" width="16">{{ template.creator.username }}</span></div>
-        <div class="creation"> {{  }} </div>
-        <div class="developers">
+        <div class="title"> {{ template.title }} 
+          - <span class="purple user">
+          <img src="assets/images/user.svg" width="16">{{ template.creator.username }}</span>
+          - developers
           <ul>
             <li *ngFor="let dev of template.developers; index as i">{{ dev.username }}</li>
           </ul>
         </div>
 
+        <div class="creation"> {{ template.created | date:"dd/MM/yy" }} </div>
+        <div class="developers">
+
+        </div>
+
         <span class="votes"> {{ template.votes }} </span>
-        <div class="description"> {{ template.description }} </div>
+        <div class="description"> {{ template.description }} Lorem fistrum jarl mamaar torpedo benemeritaar diodenoo llevame al sircoo la caidita de la pradera. A wan la caidita ese que llega apetecan fistro diodeno a gramenawer. Me cago en tus muelas te voy a borrar el cerito por la gloria de mi madre diodeno. Condemor la caidita a gramenawer condemor fistro papaar papaar ese que llega apetecan la caidita. Sexuarl quietooor ese hombree hasta luego Lucas. </div>
     </div>
 
     <!-- <div class="left">
@@ -25,19 +31,19 @@
     </div> -->
     
     <div class="middle">
-        <button class="btn" (click)="devadd(template._id, this.auth.user._id)">Develop</button><br>
+        <button class="btn develop" (click)="devadd(template._id, this.auth.user._id)">Develop</button><br>
         
-        <button class="btn">Message</button><br>
+        <button class="btn message">Message</button><br>
         
-        <button class="btn rate" ng-disabled="this.voted == true" ng-model="voted" (click)="rateup(template._id)">
+        <button class="btn rate" ng-model="voted" (click)="rateup(template._id)">
           <img src="assets/images/rate.png"/>
         </button>
   
-        <button class="btn rate" ng-disabled="this.voted == true" ng-model="voted" (click)="ratedown(template._id)">
+        <button class="btn rate" ng-model="voted" (click)="ratedown(template._id)">
           <img class="reverse" src="assets/images/rate.png"/>
         </button><br>
   
-        <button (click)="deleteTemplate(template._id)"> Delete </button><br>
+        <button class="delete" *ngIf="template.creator.username == this.auth.user.username" (click)="deleteTemplate(template._id)"> Delete </button><br>
         <a [routerLink]="['../']"> <button class="btn">Back to list</button></a>
     </div>
 
