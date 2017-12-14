@@ -98,6 +98,7 @@ templateRoutes.post('/uploadPhoto', upload.single('image'), (req, res, next) => 
   }
 });
 
+/* CREATE Template with images array*/
 templateRoutes.post('/createOne', (req, res, next) => {
   
   console.log(req.body);

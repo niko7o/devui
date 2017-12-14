@@ -36,7 +36,7 @@ export class TemplateService {
   /* Creating New Template */
 
   create(title: string, description: string, creator: string, images: Array<string>) {
-    return this.http.post("http://localhost:3000/api/templates/createOne", { title, description, creator, images }, this.options)
+    return this.http.post(`${BASEURL}/createOne`, { title, description, creator, images }, this.options)
       .map(res => res.json())
       .map(user => this.handleUser(user))
       .catch(this.handleError);

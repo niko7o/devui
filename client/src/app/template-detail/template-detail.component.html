@@ -20,12 +20,9 @@
     <div class="wireframes"> 
       <ul>
         <li *ngFor="let imageURL of template.images; index as i">
-          <img src="{{ imageURL }}">
+          <img src="http://localhost:3000/{{ imageURL }}">
         </li>
-      </ul>{{ template.images }}<br>
-      <img src="assets/images/614x345.png" /><br>
-      <img src="assets/images/614x345.png" /><br>
-      <img src="assets/images/614x345.png" /><br>
+      </ul>
     </div>
     
     <div class="right">

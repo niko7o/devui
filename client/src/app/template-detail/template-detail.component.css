@@ -55,6 +55,7 @@ a {
     max-width: 614px;
     text-align: justify;
     line-height: 18px;
+    margin: 20px 0px 5px;
 }
 
 .purple {
@@ -82,11 +83,7 @@ a {
 
 .title ul {
     display: inline-block;
-    -webkit-margin-before: 0em;
-    -webkit-margin-after: 0em;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
-    -webkit-padding-start: 0px;
+    padding-left: 5px;
 }
 
 .title ul li {
@@ -137,11 +134,29 @@ button:disabled {
     padding: 3px 8px;
 }
 
+.wireframes {
+    max-width: 620px;
+}
+
 .wireframes, .right {
     float: left;
 }
 
+.wireframes ul {
+    padding-left: unset;
+    padding-top: 4px;
+    list-style-type: none;
+}
+
+.wireframes img {
+    margin-bottom: 1em;
+}
+
+.wireframes img {
+    width: 614px;
+    height: 345px;
+}
+
 .right {
-    margin-top: 16px;
     margin-left: 19px;
 }
