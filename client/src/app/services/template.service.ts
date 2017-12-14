@@ -18,7 +18,6 @@ export class TemplateService {
   template: object;
   user: object;
   loginEvent: EventEmitter<object> = new EventEmitter();
-  imagesToPush: Array<any> = [];
 
   constructor(private http: Http) {}
 
@@ -36,8 +35,8 @@ export class TemplateService {
 
   /* Creating New Template */
 
-  create(title: string, description: string, creator: string, images: Array<any>) {
-    return this.http.post(`${BASEURL}/new`, { title, description, creator, images }, this.options)
+  create(title: string, description: string, creator: string, images: Array<string>) {
+    return this.http.post("http://localhost:3000/api/templates/createOne", { title, description, creator, images }, this.options)
       .map(res => res.json())
       .map(user => this.handleUser(user))
       .catch(this.handleError);

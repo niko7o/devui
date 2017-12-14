@@ -13,6 +13,6 @@
           (uploadFinished)="onUploadFinished($event)">
       </image-upload>
       <!-- Falta pushear las images al array de template.images -->
-      <button (click)="create(title, description, this.auth.user._id, images)">Create Template</button>
+      <button (click)="create(title, description, this.auth.user._id)">Create Template</button>
     </form>
 </div>

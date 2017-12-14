@@ -28,6 +28,7 @@ const simpleCRUD = (Model) => {
 
   /* CREATE a new #{model} */
   router.post('/new', (req, res, next) => {
+    console.log("ENTRO EN EL BACK")
     const obj_data = _.pick(req.body, model_properties);
     const obj = new Model(obj_data);
     console.log(obj_data);

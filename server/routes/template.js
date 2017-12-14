@@ -92,11 +92,29 @@ templateRoutes.post("/:id/removefavorite", (req, res, next) => {
 templateRoutes.post('/uploadPhoto', upload.single('image'), (req, res, next) => {
   if (req.file) {
     res.status(200).json(req.file.path);
+    console.log(req.file);
   } else {
     res.status(500).json("There was an error uploading this photo. Try again.");
   }
-  // console.log(req.file);
 });
+
+templateRoutes.post('/createOne', (req, res, next) => {
+  
+  console.log(req.body);
+
+  const obj = new Template({
+    title: req.body.title,
+    description: req.body.description,
+    creator: req.body.creator,
+    images: req.body.images
+  });
+
+  console.log(obj);
+
+  obj.save()
+  .then(o => res.json(o))
+  .catch(e => res.json(e));
+})
 
 /* Add developer to template's developers */
 templateRoutes.post("/:id/devadd", (req, res, next) => {
