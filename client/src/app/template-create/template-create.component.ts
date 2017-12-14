@@ -28,12 +28,9 @@ export class TemplateCreateComponent implements OnInit {
 
   onUploadFinished(e) {
     this.photo[e.file.name] = e.serverResponse._body.slice(1, -1);
-    console.log(e);
-    console.log(this.photo);
   }
   onRemoved(e) {
     delete this.photo[e.file.name];
-    console.log(this.photo);
   }
 
 }

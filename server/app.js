@@ -73,12 +73,17 @@ app.use('/api/auth', auth);
 app.use('/api/users', api(require('./models/user.model')));
 app.use('/api/templates', api(require('./models/template.model')));
 
+// catch 404 and forward to Angular
+app.all('/*', function (req, res) {
+  res.sendFile(__dirname + '/public/index.html');
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  next("/");
-  // var err = new Error('Not Found');
-  // err.status = 404;
-  // next(err);
+  //next("/");
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
 });
 
 // app.use(function(req, res) {

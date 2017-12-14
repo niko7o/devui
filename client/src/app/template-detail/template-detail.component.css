@@ -18,6 +18,7 @@ a {
     border-radius: 50%;
     font-family: sans-serif;
     margin: 0px 0px;
+    min-width: 17px;
 }
 
 .reverse {
@@ -90,7 +91,7 @@ a {
 
 .title ul li {
     font-size: 10px;
-    font-family: 'Lora';
+    font-family: 'Merriweather';
     display: inline-block;
     color: #2ddd6d;
     text-transform: lowercase;
@@ -116,6 +117,7 @@ button {
     font-size: 10px;
     letter-spacing: 1px;
     margin:20px 0 0 0;
+    transition: 0.15s background-color linear;
 }
 
 button:hover {

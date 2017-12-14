@@ -1,5 +1,5 @@
 <div class="templates">
-  <div class="list" *ngFor="let temp of templates">
+  <div class="list" *ngFor="let temp of templates | orderBy : votes">
 
     <div class="template">
       <div class="text">

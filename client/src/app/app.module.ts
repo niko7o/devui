@@ -18,6 +18,7 @@ import { TemplateService } from './services/template.service';
 import { TemplateCreateComponent } from './template-create/template-create.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { ImageUploadModule } from 'angular2-image-upload';
+import { Ng2OrderModule } from 'ng2-order-pipe';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ImageUploadModule } from 'angular2-image-upload';
     FormsModule,
     HttpModule,
     RouterModule.forRoot(routes),
-    ImageUploadModule.forRoot()
+    ImageUploadModule.forRoot(),
+    Ng2OrderModule
   ],
   providers: [AuthService, TemplateService],
   bootstrap: [AppComponent]

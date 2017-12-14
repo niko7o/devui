@@ -23,6 +23,7 @@
     "@angular/router": "^5.0.0",
     "angular2-image-upload": "^1.0.0-rc.0",
     "core-js": "^2.4.1",
+    "ng2-order-pipe": "^0.1.5",
     "ng2-page-transition": "^1.1.0",
     "rxjs": "^5.5.4",
     "web-animations-js": "^2.3.1",
