@@ -17,10 +17,9 @@ templateRoutes.get("/:id/rateup", (req, res, next) => {
       if (!editedTemplate) {
         res.status(400).json({ message: 'This template does not exist, impossible to rate up!'});
       } else {
-        res.status(200).json(`Vote count incremented to: ${ editedTemplate.votes }`);
+        res.status(200).json('Vote count incremented.');
       }
-  })
-  .catch(res.status(500).json({ message: 'Something went wrong with the server while rating up'}));
+  }).catch(res.status(500).json({ message: 'Something went wrong with the server while rating up'}));
 });
 
 /* Rate template down */
@@ -34,8 +33,7 @@ templateRoutes.get("/:id/ratedown", (req, res, next) => {
       } else {
         res.status(200).json(`Vote count incremented to: ${ editedTemplate.votes }`);
       }
-  })
-  .catch(res.status(500).json({ message: 'Something went wrong with the server while rating down'}));
+  }).catch(res.status(500).json({ message: 'Something went wrong with the server while rating down'}));
 });
 
 /* Add template update */
@@ -53,8 +51,7 @@ templateRoutes.post("/:id/addupdate/", (req, res, next) => {
       } else {
         res.status(200).json(`Updated template. ${ editedTemplate.updates }`);
       }
-    })
-    .catch(res.status(500).json({ message: 'Something went wrong with the server while sending update'}));
+    }).catch(res.status(500).json({ message: 'Something went wrong with the server while sending update'}));
 });
 
 /* Add template to user's favorites */
@@ -110,14 +107,27 @@ templateRoutes.post("/:id/devadd", (req, res, next) => {
     let userID = req.user._id;
     
     Template.findByIdAndUpdate(templateID, { "$push": { "developers": userID } }, { new: true })
-      .populate('developers')
       .then(newTemplate => {
         if (!newTemplate) {
           res.status(400).json({ message: 'Could not add developer to this template'});
         } else {
           res.status(200).json(`Added dev ${user} to template. `);
-          console.log('- + -')
-          console.log(newTemplate);
+        }
+    })
+});
+
+/* Remove developer from template's developers */
+templateRoutes.post("/:id/devrem", (req, res, next) => {
+  
+    let templateID = req.params.id;
+    let userID = req.user._id;
+    
+    Template.findByIdAndUpdate(templateID, { "$pull": { "developers": userID } }, { new: true })
+      .then(newTemplate => {
+        if (!newTemplate) {
+          res.status(400).json({ message: 'Could not remove developer from this template'});
+        } else {
+          res.status(200).json(`Removed dev ${user} to template. `);
         }
     })
 });

@@ -11,14 +11,13 @@ import { AuthService } from '../services/auth.service';
 })
 export class TemplateDetailComponent implements OnInit {
 
-  voted = false;
   template: any;
   user: object;
 
   constructor(
     public router: Router,
     public tempServ: TemplateService,
-    private auth: AuthService,
+    public auth: AuthService,
     public route: ActivatedRoute
   ) {
     route.params.subscribe(params => {
@@ -35,17 +34,18 @@ export class TemplateDetailComponent implements OnInit {
   }
 
   rateup(id) {
-    this.voted = true;
+    this.template.votes++;
     this.tempServ.rateup(id).subscribe(template => this.template = template);
   }
 
   ratedown(id) {
-    this.voted = true;
+    this.template.votes--;
     this.tempServ.ratedown(id).subscribe(template => this.template = template);
   }
 
   devadd(templateID, userID) {
     this.tempServ.devadd(templateID, userID).subscribe(template => this.template = template);
+    // this.template.developers.push(this.user);
     setTimeout(function(){
       location.reload();
     }, 50);
