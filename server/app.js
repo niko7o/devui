@@ -6,7 +6,7 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-require('./config/multer.js');
+// require('./config/multer.js');
 const api = require('./routes/api');
 const template = require('./routes/template');
 const user = require('./routes/user');
@@ -74,13 +74,12 @@ app.use('/api/users', api(require('./models/user.model')));
 app.use('/api/templates', api(require('./models/template.model')));
 
 // catch 404 and forward to Angular
-app.all('/*', function (req, res) {
-  res.sendFile(__dirname + '/public/index.html');
-});
+// app.all('/*', function (req, res) {
+//   res.sendFile(__dirname + '/public/index.html');
+// });
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  //next("/");
   var err = new Error('Not Found');
   err.status = 404;
   next(err);

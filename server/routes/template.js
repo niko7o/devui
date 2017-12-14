@@ -4,7 +4,6 @@ const bodyParser = require('body-parser');
 const User = require('../models/user.model');
 const Template = require('../models/template.model');
 const templateRoutes = express.Router();
-
 const multer = require('multer');
 const upload = multer({ dest: 'uploads' })
 
@@ -92,12 +91,11 @@ templateRoutes.post("/:id/removefavorite", (req, res, next) => {
 /* Upload photo */
 templateRoutes.post('/uploadPhoto', upload.single('image'), (req, res, next) => {
   if (req.file) {
-    console.log(req.file.path);
     res.status(200).json(req.file.path);
   } else {
     res.status(500).json("There was an error uploading this photo. Try again.");
   }
-  console.log(req.file);
+  // console.log(req.file);
 });
 
 /* Add developer to template's developers */

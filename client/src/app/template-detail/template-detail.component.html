@@ -5,14 +5,16 @@
     <div class="info">
         <div class="title"> {{ template.title }} 
           - <span class="purple user">{{ template.creator.username }}</span>
-          - developers <img src="assets/images/user.svg" width="16"> <span class="devcount">{{ template.developers.length }}</span>
+          - developers <img src="assets/images/user.svg" width="16"> 
+          <span class="devcount">{{ template.developers.length }}</span>
           <ul>
             <li *ngFor="let dev of template.developers; index as i">{{ dev.username }}</li>
           </ul>
         </div>
-
-        <div class="creation"> {{ template.created | date:"dd/MM/yy" }} </div>
-        <div class="description"> {{ template.description }} Lorem fistrum jarl mamaar torpedo benemeritaar diodenoo llevame al sircoo la caidita de la pradera. A wan la caidita ese que llega apetecan fistro diodeno a gramenawer. Me cago en tus muelas te voy a borrar el cerito por la gloria de mi madre diodeno. Condemor la caidita a gramenawer condemor fistro papaar papaar ese que llega apetecan la caidita. Sexuarl quietooor ese hombree hasta luego Lucas. </div>
+        <div class="creation"> created: {{ template.created | date:"dd/MM/yy" }} </div>
+        <div class="description"> {{ template.description }} 
+        Lorem fistrum jarl mamaar torpedo benemeritaar diodenoo llevame al sircoo la caidita de la pradera. A wan la caidita ese que llega apetecan fistro diodeno a gramenawer. Me cago en tus muelas te voy a borrar el cerito por la gloria de mi madre diodeno. Condemor la caidita a gramenawer condemor fistro papaar papaar ese que llega apetecan la caidita. Sexuarl quietooor ese hombree hasta luego Lucas. 
+        </div>
     </div>
 
     <!-- <div class="left">

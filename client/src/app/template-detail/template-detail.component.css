@@ -1,3 +1,11 @@
+* {
+    overflow: unset !important;
+}
+
+.wrapper {
+    overflow-y: scroll !important;
+}
+
 .title {
     font-family: 'Raleway';
     text-transform: uppercase;
@@ -62,10 +70,6 @@ a {
 .user img{
     margin-right: 5px;
     vertical-align: middle;
-}
-
-.wrapper {
-    overflow-y: scroll !important;
 }
 
 .code {
