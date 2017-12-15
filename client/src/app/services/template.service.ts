@@ -102,4 +102,10 @@ export class TemplateService {
     return this.http.get(`${BASEURL}/${id}/ratedown`).map(res => res.json());
   }
 
+  /* Add zip */
+
+  addZip(templateID, url) {
+    return this.http.post(`${BASEURL}/${templateID}/addzip`, { zip: url }, this.options).map(res => res.json());
+  }
+
 }

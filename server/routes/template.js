@@ -124,6 +124,8 @@ templateRoutes.post('/addZip', (req, res, next) => {
   let templateID = req.params.id;
   let userID = req.user._id;
   let pathToZip = req.body.zip;
+
+  console.log(req.body);  
   
   Template.findByIdAndUpdate(templateID, { "$push": { "zip": pathToZip } }, { new: true })
   .then(newTemplate => {

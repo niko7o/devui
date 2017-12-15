@@ -39,11 +39,17 @@
         </button><br>
   
         <button class="delete" *ngIf="template.creator.username == this.auth.user.username" (click)="deleteTemplate(template._id)"> Delete </button><br>
-        <button *ngIf="this.auth.user.role == 'developer'" (click)="addZip()"> Add zip </button><br>
+        
+        <button *ngIf="this.auth.user.role == 'developer'" (click)="showZipModal = true"> Add zip </button>
+        <div id="zip-modal" class="modal" *ngIf="showZipModal">
+            <input type="text" placeholder="Google drive zip url.."><br>       
+            <button (click)="showZipModal = false">Close</button> <button id="sendzip">Send</button>
+        </div>
+        <br>
         <a [routerLink]="['../']"> <button class="btn">Back to list</button></a>
     </div>
 
-    <div id="message-modal" *ngIf="showModal">
+    <div id="message-modal" class="modal" *ngIf="showModal">
         <p>Do you have any questions for <b>{{ template.creator.username }}</b> ?</p>
         <textarea placeholder="Write a message.." cols="10" rows="20"></textarea><br>        
         <button (click)="showModal = false">Close</button> <button id="sendmsg">Send</button>

@@ -16,7 +16,7 @@ export class TemplateDetailComponent implements OnInit {
   votedUp: any;
   votedDown: any;
   showModal: any;
-
+  showZipModal: any;
 
   constructor(
     public router: Router,
@@ -56,6 +56,10 @@ export class TemplateDetailComponent implements OnInit {
     setTimeout(function(){
       location.reload();
     }, 50);
+  }
+
+  addzip(templateID, url) {
+    this.tempServ.addZip(templateID, url);
   }
 
 }

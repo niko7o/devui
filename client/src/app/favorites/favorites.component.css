@@ -80,7 +80,8 @@ svg {
 }
 
 #details:hover {
-    background-color: #F05228;
+    color: white;
+    background-color: #d63e71;
 }
 
 .templates {

@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const Opinion = require('./opinion.model');
 const Message = require('./message.model');
 const Template = require('./template.model');
 
