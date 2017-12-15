@@ -74,6 +74,66 @@ svg {
 
 /* Buttons */
 
+#details {
+    background-color: white; 
+    color: black;
+}
+
+#details:hover {
+    background-color: #F05228;
+}
+
+.templates {
+    margin-top: 50px;
+    width: auto;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: 430px;
+    margin-bottom: -17px;
+}
+
+.templates p {
+    white-space: pre-wrap;
+}
+
+.list {
+    position: relative;
+    height: 430px;
+    display: inline-block;
+}
+
+.template {
+    display: block;
+    float: left;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    background-color: rgba(0,0,0,0.6);
+    color: black;
+    margin: 20px 40px 20px 0;
+    box-sizing: border-box;
+    padding: 20px;
+    transition: 0.15s all linear;
+}
+
+.template:hover {
+    background-color: rgba(0,0,0,0);
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgb(36, 36, 36);
+}
+
+.template h3 {
+    font-family: 'Raleway';
+    text-transform: uppercase;
+    color: royalblue;
+    background-color: white;
+    padding: 10px 21px;
+    font-size: 12px;
+    border-radius: 50px;
+    display: inline-block;
+}
+
 button {
     position: absolute;
     bottom: 63px;
@@ -84,20 +144,101 @@ button {
     text-transform: uppercase;
     font-size: 10px;
     letter-spacing: 1px;
-    width: 130px;
 }
 
 button:hover {
     cursor: pointer;
     background-color: #3F35FC;
     color: white;   
+}   
+
+.small {
+    font-size: 10px;
+    font-weight: lighter;
 }
 
-#details {
-    background-color: white; 
-    color: black;
+.creation {
+    display: inline-block;
+    font-size: 9px;
+    border-radius: 50px;
+    position: absolute;
+    right: 90px;
+    z-index: 0;
+    color: white;
+    top: 30px;
 }
 
-#details:hover {
-    background-color: #F05228;
+.rate {
+    width: 16px;
+    background-color: #d63e71;
+    padding: 10px;
+    border-radius: 18px;
+    vertical-align: middle;
+}
+
+.text {
+    height: 200px;
+}
+
+.votes {
+    text-align: right;
+    padding-right: 19px;
+    margin-top: 20px;
+    background-color: #981f48;
+    border-radius: 50px;
+    display: inline-block;
+    float: right;
+    border-radius: 50px;
+    color: white;
+    font-size: 11px;
+}
+
+svg {
+    margin-top: 20px;
+    margin-left: -33px;
+}
+
+.active-heart {
+    fill: white;
+}
+
+.active-heart:hover {
+    cursor: pointer;
+    fill:#F05228;
+}
+
+.no-heart {
+    fill:#F05228;
+}
+
+.no-heart:hover {
+    cursor: pointer;
+    fill: white;
+}
+
+.author {
+    background-color: royalblue;
+    padding: 10px 15px 10px 10px;
+    vertical-align: middle;
+    position: absolute;
+    top: 250px;
+    border-radius: 20px;
+    color: white;
+    font-family: Raleway;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.author img {
+    vertical-align: middle;
+    margin-right: 3px;
+}
+
+.preview {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 20px;
+    left: 0px;
+    z-index: -1;
 }

@@ -1,24 +1,23 @@
 <div class="templates">
   <!-- ng-show="this.auth.user.favorites | contains: this.templates._id" -->
   <div class="list" *ngFor="let t of templates">
-    <div class="template" *ngIf="this.auth.user.favorites.indexOf(t._id) !== -1">
-      <div class="text">
-        <h3> {{ t.title }} </h3>
-        <p> {{ t.description }} </p>
-        <p class="small" style="color: gray"> ID: {{ t._id }} </p>
-        <p class="small"> User: {{ t.creator.username }} </p>
+      <div class="template" *ngIf="this.auth.user.favorites.indexOf(t._id) !== -1">
+            <div class="text">
+              <h3>{{ t.title }}</h3>
+              <div class="creation"> {{ t.created | date:"dd/MM/yy" }} </div>
+              <img class="preview" src="http://localhost:3000/{{t.images[0]}}">
+              <p class="small author"> <img width="16" src="assets/images/user.svg" />{{ t.creator.username }} </p>
+            </div>
+            <div class="votes"> 
+              <img class="rate" src="assets/images/rate.png"/> <span>{{ t.votes }}</span>
+            </div>
+            <a [routerLink]="['../templates', t._id]">
+              <button id="details">Details</button>
+          </a>
+          
+          <a (click)="removeFavorite(t._id, this.auth.user._id)">
+            <button id="remove" style="right: 67px !important; left: unset !important;">Remove</button>
+          </a>
+        </div>
       </div>
-      <div class="votes"> 
-        <img class="rate" src="assets/images/rate.png"/> <span>{{ t.votes }}</span>
-      </div>
-
-      <a [routerLink]="['../templates', t._id]">
-          <button id="details">Details</button>
-      </a>
-      
-      <a (click)="removeFavorite(t._id, this.auth.user._id)">
-        <button id="remove" style="right: 67px !important; left: unset !important;">Remove</button>
-      </a>
-    </div>
-  </div>
 </div>
