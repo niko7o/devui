@@ -98,9 +98,8 @@ templateRoutes.post('/uploadPhoto', upload.single('image'), (req, res, next) => 
   }
 });
 
-/* CREATE Template with images array*/
+/* CREATE Template with images array */
 templateRoutes.post('/createOne', (req, res, next) => {
-  
   console.log(req.body);
 
   const obj = new Template({
@@ -111,11 +110,30 @@ templateRoutes.post('/createOne', (req, res, next) => {
   });
 
   console.log(obj);
-
   obj.save()
   .then(o => res.json(o))
   .catch(e => res.json(e));
-})
+});
+
+/* Provide zip path for when developer is done */
+
+templateRoutes.post('/addZip', (req, res, next) => {
+
+  console.log(req.body);
+
+  let templateID = req.params.id;
+  let userID = req.user._id;
+  let pathToZip = req.body.zip;
+  
+  Template.findByIdAndUpdate(templateID, { "$push": { "zip": pathToZip } }, { new: true })
+  .then(newTemplate => {
+    if (!newTemplate) {
+      res.status(400).json({ message: 'Could not add path to zip of to this template'});
+    } else {
+      res.status(200).json(`Added ${pathToZip} to template. `);
+    }
+  })
+});  
 
 /* Add developer to template's developers */
 templateRoutes.post("/:id/devadd", (req, res, next) => {

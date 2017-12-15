@@ -8,7 +8,7 @@
     width: 200px;
     max-height: 100vh;
     background-color: #274651;
-    z-index: -1;
+    z-index: -2;
     transform:  rotate(44deg) scale(3) skew(7deg) translate(0px);
     -webkit-transform:  rotate(44deg) scale(3) skew(7deg) translate(0px);
     -moz-transform: rotate(44deg) scale(3) skew(7deg) translate(0px);

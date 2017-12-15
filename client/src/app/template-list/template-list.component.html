@@ -4,9 +4,8 @@
     <div class="template">
       <div class="text">
         <h3>{{ temp.title }}</h3>
-        <div class="creation"> created: {{ temp.created | date:"dd/MM/yy" }} </div>
-        <p> {{ temp.description }} </p>
-        <p class="small" style="color: gray"> ID: {{ temp._id }} </p>
+        <div class="creation"> {{ temp.created | date:"dd/MM/yy" }} </div>
+        <img class="preview" src="http://localhost:3000/{{temp.images[0]}}">
         <p class="small author"> <img width="16" src="assets/images/user.svg" />{{ temp.creator.username }} </p>
       </div>
       <div class="votes"> 

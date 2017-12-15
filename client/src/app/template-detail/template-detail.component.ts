@@ -16,7 +16,7 @@ export class TemplateDetailComponent implements OnInit {
   votedUp: any;
   votedDown: any;
   showModal: any;
-  
+
 
   constructor(
     public router: Router,

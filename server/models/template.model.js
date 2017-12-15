@@ -10,9 +10,10 @@ const templateSchema = new Schema({
   images: [{ type: String }],
   developers: [{ type: Schema.Types.ObjectId, ref: 'User' }],
   updates: [{ type: Schema.Types.ObjectId, ref: 'Update' }],
-  favorites: { type : Number, default: 0 }, // only for favorites count
+  favorites: { type : Number, default: 0 },
   votes: { type : Number, default: 0 },
-  creator: { type: Schema.Types.ObjectId, ref: 'User'}
+  creator: { type: Schema.Types.ObjectId, ref: 'User'},
+  zip: [{ type: String}]
 },
 {
   timestamps: {

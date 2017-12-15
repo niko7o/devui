@@ -39,6 +39,7 @@
         </button><br>
   
         <button class="delete" *ngIf="template.creator.username == this.auth.user.username" (click)="deleteTemplate(template._id)"> Delete </button><br>
+        <button *ngIf="this.auth.user.role == 'developer'" (click)="addZip()"> Add zip </button><br>
         <a [routerLink]="['../']"> <button class="btn">Back to list</button></a>
     </div>
 

@@ -27,9 +27,8 @@ export class TemplateCreateComponent implements OnInit {
     const photos = this.toPush;
     console.log('componente', title, description, creator, photos);
     this.template.create(title, description, creator, photos)
-    .map(e => console.log('hola'))
-    .subscribe();
-    this.router.navigate(['/templates']);
+    .map(e => console.log('hola')).subscribe();
+    this.router.navigate(['/']);
   }
 
   onUploadFinished(e) {
